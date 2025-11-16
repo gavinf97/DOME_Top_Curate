@@ -1,7 +1,21 @@
+# Dataset folder and files
 Dataset/*
 Dataset/top20_entries_across_journals.csv
 Dataset/journal_top20_summary.csv
+
+# Curation output files
 positive_entries_backup_20251110_145850.csv
 positive_entries.csv
 positive_*
 negative_*
+curation_progress.json
+
+# DOME Registry output folders and files
+DOME_Registry_JSON_Files/
+DOME_Registry_CSV_Files/
+DOME_Registry_PMC_PDFs/
+DOME_Registry_PMC_Title_Abstract/
+
+# Backup files
+*_backup.csv
+*_backup.json
