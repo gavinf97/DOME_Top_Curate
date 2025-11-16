@@ -12,10 +12,11 @@ curation_progress.json
 
 # DOME Registry output folders and files
 DOME_Registry_JSON_Files/
-DOME_Registry_CSV_Files/
+DOME_Registry_TSV_Files/
 DOME_Registry_PMC_PDFs/
 DOME_Registry_PMC_Title_Abstract/
 
 # Backup files
 *_backup.csv
 *_backup.json
+*_backup.tsv
