@@ -14,7 +14,7 @@ curation_progress.json
 DOME_Registry_JSON_Files/
 DOME_Registry_TSV_Files/
 DOME_Registry_PMC_PDFs/
-DOME_Registry_PMC_Title_Abstract/
+DOME_Registry_PMC_Supplementary/
 
 # Backup files
 *_backup.csv
