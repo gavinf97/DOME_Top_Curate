@@ -1,0 +1,75 @@
+================================================================================
+DOME REGISTRY - FAILED DOI MAPPINGS REMEDIATION INSTRUCTIONS
+Generated: 2025-11-20 17:34:11
+================================================================================
+
+OVERVIEW
+--------------------------------------------------------------------------------
+Total failed mappings: 33
+These DOIs were present in DOME Registry but could not be mapped to
+PMID/PMCID identifiers via NCBI E-Utilities API.
+
+POSSIBLE REASONS FOR FAILURE
+--------------------------------------------------------------------------------
+1. Article not indexed in PubMed/PMC database
+2. DOI format error or typo in DOME Registry
+3. Recently published article (not yet indexed)
+4. Article from non-PubMed indexed journal
+5. Preprint or non-peer-reviewed article
+
+REMEDIATION STEPS
+--------------------------------------------------------------------------------
+1. Open the HTML report for easy DOI link navigation
+   File: DOME_Registry_Remediation/Failed_DOI_Mappings_Report_2025-11-20.html
+
+2. For each failed DOI:
+   a. Click the DOI link to verify article exists
+   b. Search PubMed using DOI or article title:
+      https://pubmed.ncbi.nlm.nih.gov/
+   c. If found, note the PMID (and PMCID if available)
+   d. Update the remediation TSV with:
+      - Manual_PMID column
+      - Manual_PMCID column (if available)
+      - Remediation_Status: 'RESOLVED' or 'NOT_IN_PUBMED'
+      - Remediation_Notes: Brief explanation
+
+3. Common remediation scenarios:
+
+   SCENARIO A: Article found in PubMed
+   - Manual_PMID: <paste PMID>
+   - Manual_PMCID: <paste PMCID if available>
+   - Remediation_Status: RESOLVED
+   - Remediation_Notes: Found via manual search
+
+   SCENARIO B: Article not in PubMed
+   - Manual_PMID: (leave empty)
+   - Manual_PMCID: (leave empty)
+   - Remediation_Status: NOT_IN_PUBMED
+   - Remediation_Notes: Journal not indexed in PubMed
+
+   SCENARIO C: DOI error/broken
+   - Manual_PMID: (leave empty or add correct if found)
+   - Manual_PMCID: (leave empty or add correct if found)
+   - Remediation_Status: DOI_ERROR
+   - Remediation_Notes: DOI link broken, needs correction in DOME
+
+4. Save the updated TSV file
+
+5. Re-import remediated data (optional future step):
+   - Merge manual PMID/PMCID back into main dataset
+   - Re-run download blocks for newly identified PMCIDs
+
+FILES CREATED
+--------------------------------------------------------------------------------
+1. TSV file: DOME_Registry_Remediation/Failed_DOI_Mappings_2025-11-20.tsv
+2. HTML report: DOME_Registry_Remediation/Failed_DOI_Mappings_Report_2025-11-20.html
+3. This file: DOME_Registry_Remediation/REMEDIATION_INSTRUCTIONS.txt
+
+NOTE ON TSV FORMAT
+--------------------------------------------------------------------------------
+TSV (Tab-Separated Values) is used instead of CSV because:
+- Better handling of commas in text (titles, journal names)
+- Preserves special characters and unicode
+- More robust for scientific text and metadata
+- Can be opened in Excel, LibreOffice, or any text editor
+
