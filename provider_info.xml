@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<providers>
+  <provider>
+    <id>11111</id>
+    <resourceName>DOME</resourceName>
+    <description>DOME Registry</description>
+    <email>dome@dome.ml</email>
+  </provider>
+</providers>

@@ -1,0 +1,1 @@
+Element 'source': [facet 'enumeration'] The value 'DOI' is not an element of the set {'AGR', 'CIT', 'CBA', 'CTX', 'ETH', 'HIR', 'MED', 'PAT', 'PMC'}.
