@@ -1,11 +1,11 @@
 ================================================================================
 DOME REGISTRY - FAILED DOI MAPPINGS REMEDIATION INSTRUCTIONS
-Generated: 2025-11-25 18:36:08
+Generated: 2025-11-25 20:21:04
 ================================================================================
 
 OVERVIEW
 --------------------------------------------------------------------------------
-Total failed mappings: 31
+Total failed mappings: 5
 These DOIs were present in DOME Registry but could not be mapped to
 PMID/PMCID identifiers via NCBI E-Utilities API.
 
