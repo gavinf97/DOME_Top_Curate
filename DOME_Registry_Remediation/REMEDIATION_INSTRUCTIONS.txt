@@ -1,11 +1,11 @@
 ================================================================================
 DOME REGISTRY - FAILED DOI MAPPINGS REMEDIATION INSTRUCTIONS
-Generated: 2025-11-20 17:34:11
+Generated: 2025-11-25 18:36:08
 ================================================================================
 
 OVERVIEW
 --------------------------------------------------------------------------------
-Total failed mappings: 33
+Total failed mappings: 31
 These DOIs were present in DOME Registry but could not be mapped to
 PMID/PMCID identifiers via NCBI E-Utilities API.
 
@@ -20,7 +20,7 @@ POSSIBLE REASONS FOR FAILURE
 REMEDIATION STEPS
 --------------------------------------------------------------------------------
 1. Open the HTML report for easy DOI link navigation
-   File: DOME_Registry_Remediation/Failed_DOI_Mappings_Report_2025-11-20.html
+   File: DOME_Registry_Remediation/Failed_DOI_Mappings_Report_2025-11-25.html
 
 2. For each failed DOI:
    a. Click the DOI link to verify article exists
@@ -61,8 +61,8 @@ REMEDIATION STEPS
 
 FILES CREATED
 --------------------------------------------------------------------------------
-1. TSV file: DOME_Registry_Remediation/Failed_DOI_Mappings_2025-11-20.tsv
-2. HTML report: DOME_Registry_Remediation/Failed_DOI_Mappings_Report_2025-11-20.html
+1. TSV file: DOME_Registry_Remediation/Failed_DOI_Mappings_2025-11-25.tsv
+2. HTML report: DOME_Registry_Remediation/Failed_DOI_Mappings_Report_2025-11-25.html
 3. This file: DOME_Registry_Remediation/REMEDIATION_INSTRUCTIONS.txt
 
 NOTE ON TSV FORMAT
