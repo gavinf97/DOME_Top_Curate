@@ -1,0 +1,61 @@
+
+DOME Registry Checker Analysis Report
+=====================================
+Total Entries in TSV: 275
+
+Processed JSON Analysis:
+- Actual JSON files in directory: 231
+- TSV Entries matching a JSON file: 240
+- Unique PMCIDs with JSON files: 231
+- Discrepancy (Entries - Unique): 9 (Likely duplicates in TSV)
+
+Entries Flagged for Processing (Not processed + PDF & Supp available): 0
+
+Data Availability:
+- PDF Downloadable: 239
+- Supplementary Downloadable: 239
+
+Folder Integrity:
+- Empty Folders (where PMCID exists): 0
+
+Entries Processed but No PDF Available:
+   shortid mapped_pmcid                                                                                                                title
+vsx18unv9t  PMC12077394 Spatial Integration of Multi-Omics Data from Serial Sections using the novel Multi-Omics Imaging Integration Toolset
+
+Duplicate PMCIDs in TSV (Top 10):
+   shortid mapped_pmcid
+f4zymru581   PMC4507953
+74z8knxsmc   PMC4606520
+r3o9d6vk1p   PMC4606520
+r7jsdtsoxh   PMC4606520
+duas5qkjag   PMC4507953
+8ltvqe2m93   PMC5650527
+5a9ger6xi3   PMC5650527
+toe45v1h7a   PMC6091426
+iblymem5cf   PMC6091426
+od7rdaz7w7   PMC5930664
+
+Duplicate Entries in Source JSON (Same Title or DOI):
+=====================================================
+   shortid                                                                                                                                              publication_title                           publication_doi
+f4zymru581                                                                                 Classification of pallidal oscillations with increasing parkinsonian severity.                     10.1152/jn.00840.2014
+duas5qkjag                                                                                 Classification of pallidal oscillations with increasing parkinsonian severity.                     10.1152/jn.00840.2014
+5a9ger6xi3                                                                                 From flamingo dance to (desirable) drug discovery: a nature-inspired approach.              10.1016/j.drudis.2017.05.008
+8ltvqe2m93                                                                                 From flamingo dance to (desirable) drug discovery: a nature-inspired approach.              10.1016/j.drudis.2017.05.008
+aqtrrhz75x                                                                                        Imputation method for single-cell RNA-seq data using neural topic model               10.1093/gigascience/giad098
+krz8m7iufj                                                                                      Imputation Methods for Single-Cell RNA-seq Data Using Neural Topic Models               10.1093/gigascience/giad098
+r3o9d6vk1p                                                              KIR Genes and Patterns Given by the A Priori Algorithm: Immunity for Haematological Malignancies.                       10.1155/2015/141363
+74z8knxsmc                                                              KIR Genes and Patterns Given by the A Priori Algorithm: Immunity for Haematological Malignancies.                       10.1155/2015/141363
+r7jsdtsoxh                                                              KIR Genes and Patterns Given by the A Priori Algorithm: Immunity for Haematological Malignancies.                       10.1155/2015/141363
+4zvfuyfezh MRI-based machine learning radiomics can predict HER2 expression level and pathologic response after neoadjuvant therapy in HER2 overexpressing breast cancer.               10.1016/j.ebiom.2020.103042
+9regsp7l7u MRI-based machine learning radiomics can predict HER2 expression level and pathologic response after neoadjuvant therapy in HER2 overexpressing breast cancer.               10.1016/j.ebiom.2020.103042
+l9ylxpirie                                                                         Novel scaffold of natural compound eliciting sweet taste revealed by machine learning.            10.1016/j.foodchem.2020.126864
+fozqqtqf2d                                                                         Novel scaffold of natural compound eliciting sweet taste revealed by machine learning.            10.1016/j.foodchem.2020.126864
+toe45v1h7a                                           P2Rank: machine learning based tool for rapid and accurate prediction of ligand binding sites from protein structure                 10.1186/s13321-018-0285-8
+iblymem5cf                                           P2Rank: machine learning based tool for rapid and accurate prediction of ligand binding sites from protein structure                 10.1186/s13321-018-0285-8
+od7rdaz7w7                                                                                           Prediction of plant lncRNA by ensemble machine learning classifiers.                 10.1186/s12864-018-4665-2
+ixx5zlqxpf                                                                                           Prediction of plant lncRNA by ensemble machine learning classifiers.                 10.1186/s12864-018-4665-2
+8mjjeoyqtq                                                                      SPOT-Disorder2: Improved Protein Intrinsic Disorder Prediction by Ensembled Deep Learning https://doi.org/10.1016/j.gpb.2019.01.004
+w55oz05fks                                                                      SPOT-Disorder2: Improved Protein Intrinsic Disorder Prediction by Ensembled Deep Learning https://doi.org/10.1016/j.gpb.2019.01.004
+fv16isykca                                                 Using a machine learning approach to identify key prognostic molecules for esophageal squamous cell carcinoma.                10.1186/s12885-021-08647-1
+agwmu9cbwt                                                 Using a machine learning approach to identify key prognostic molecules for esophageal squamous cell carcinoma.                10.1186/s12885-021-08647-1
