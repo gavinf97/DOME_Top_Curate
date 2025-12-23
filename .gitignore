@@ -20,3 +20,8 @@ DOME_Registry_PMC_Supplementary/
 *_backup.csv
 *_backup.json
 *_backup.tsv
+
+# Positive PMC output folders
+Positive_PMC_PDFs/
+Positive_PMC_Supplementary/
+Positive_PMC_TSV_Files/
