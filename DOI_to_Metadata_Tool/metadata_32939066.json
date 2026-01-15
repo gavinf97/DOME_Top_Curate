@@ -1,0 +1,9 @@
+{
+    "publication/title": "Array programming with NumPy.",
+    "publication/authors": "Harris Charles R, Millman K Jarrod, van der Walt St\u00e9fan J, Gommers Ralf, Virtanen Pauli, Cournapeau David, Wieser Eric, Taylor Julian, Berg Sebastian, Smith Nathaniel J, Kern Robert, Picus Matti, Hoyer Stephan, van Kerkwijk Marten H, Brett Matthew, Haldane Allan, Del R\u00edo Jaime Fern\u00e1ndez, Wiebe Mark, Peterson Pearu, G\u00e9rard-Marchant Pierre, Sheppard Kevin, Reddy Tyler, Weckesser Warren, Abbasi Hameer, Gohlke Christoph, Oliphant Travis E",
+    "publication/journal": "Nature",
+    "publication/year": "2020",
+    "publication/pmid": "32939066",
+    "publication/pmcid": "PMC7759461",
+    "publication/doi": "10.1038/s41586-020-2649-2"
+}
