@@ -89,6 +89,7 @@ class EvaluationApp:
         # UI Setup
         self.setup_ui()
         self.load_current_data()
+        self.update_display()
 
     def load_existing_results(self):
         if os.path.exists(OUTPUT_FILE):
@@ -165,22 +166,27 @@ class EvaluationApp:
         try:
             with open(human_json_path, 'r') as f:
                 self.human_data = json.load(f)
-        except:
+        except Exception as e:
+            print(f"Error loading human json: {e}")
             self.human_data = {}
             
         try:
             with open(copilot_json_path, 'r') as f:
                 self.copilot_data = json.load(f)
-        except:
+        except Exception as e:
+            print(f"Error loading copilot json: {e}")
             self.copilot_data = {}
             
         self.main_pdf = os.path.join(folder_path, f"{pmcid}_main.pdf")
         self.supp_pdfs = glob.glob(os.path.join(folder_path, "*.pdf"))
         self.supp_pdfs = [p for p in self.supp_pdfs if os.path.abspath(p) != os.path.abspath(self.main_pdf)]
         
-        self.update_display()
+        # self.update_display() # Moved to explicit call to prevent double updates
 
     def update_display(self):
+        if self.current_pmc_index >= len(self.pmc_ids):
+            return
+
         pmcid = self.pmc_ids[self.current_pmc_index]
         field = FIELDS[self.current_field_index]
         
@@ -257,6 +263,7 @@ class EvaluationApp:
         comment = self.comment_entry.get("1.0", tk.END).strip()
         self.save_result(rank, comment)
         
+        # Advance logic
         self.current_field_index += 1
         if self.current_field_index >= len(FIELDS):
             self.current_field_index = 0
@@ -268,6 +275,7 @@ class EvaluationApp:
                  self.load_current_data()
         
         self.update_display()
+        self.root.update_idletasks() # Force UI update
 
     def prev_item(self):
         self.current_field_index -= 1
@@ -279,7 +287,9 @@ class EvaluationApp:
             else:
                 self.current_field_index = len(FIELDS) - 1
             self.load_current_data()
+        
         self.update_display()
+        self.root.update_idletasks() # Force UI update
 
     def setup_ui(self):
         # STYLES - Crucial for font fix

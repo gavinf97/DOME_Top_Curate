@@ -1,0 +1,81 @@
+PMCID	Field	Value_A_Human	Value_B_Copilot	Rank	Comment	Timestamp
+PMC10716825	publication/title	MLcps: machine learning cumulative performance score for classification problems	MLcps: machine learning cumulative performance score for classification problems.	Tie_High	Full stop in copilot annotations - unnecessary	2026-01-28T18:21:52.041977
+PMC10716825	publication/authors	Akshay Akshay, Masoud Abedi, Navid Shekarchizadeh, Fiona C Burkhard, Mitali Katoch, Alex Bigger-Allen,Rosalyn M Adam, Katia Monastyrskaya, Ali Hashemi Gheinani	Akshay Akshay, Abedi Masoud, Shekarchizadeh Navid, Burkhard Fiona C, Katoch Mitali, Bigger-Allen Alex, Adam Rosalyn M, Monastyrskaya Katia, Gheinani Ali Hashemi	Tie_High	NAme order difference - must specifcy preferred output format (although will use EPMC)	2026-01-28T18:21:54.627295
+PMC10716825	publication/journal	GigaScience	GigaScience	Tie_High		2026-01-28T18:21:55.800229
+PMC10716825	publication/year	2023	2022	A_Better	Wrong year extraction - 2022 correct	2026-01-28T18:21:59.161497
+PMC10716825	publication/doi	10.1093/gigascience/giad108	10.1093/gigascience/giad108	Tie_High		2026-01-28T18:22:29.095698
+PMC10716825	publication/tags	[]	"- Machine learning
+- Classification problems
+- Model evaluation
+- Unified evaluation score
+- Python package
+- Performance metrics
+- Model robustness
+- Feature selection
+- Information retrieval
+- Model generalization"	B_Better	No tags but may not have been available at the time as new metadata field.	2026-01-28T18:14:42.160737
+PMC10716825	dataset/provenance	"
+In this project, we utilized four different publicly available datasets that are well recognized in the domain. The first dataset consisted of mRNA data obtained from a study on Chronic Lymphocytic Leukemia (CLL) patients, measuring their transcriptome profiles. The second dataset was collected from a cervical cancer study that analyzed the expression levels of 714 miRNAs in human samples. The third and fourth datasets were obtained from The Cancer Genome Atlas (TCGA) and included mRNA and miRNA sequencing data from patients with Breast Invasive Carcinoma (BRCA). 
+  
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  text-align: center;
+}
+th {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<table>
+
+  <tr>
+    <th>Dataset</th>
+    <th>Data type</th>
+    <th>Number of Samples</th>
+    <th>Number of Features</th>
+    <th>Target Class ratio</th>
+  </tr>
+  <tr>
+    <td>CLL</td>
+    <td>mRNA</td>
+    <td>136</td>
+    <td>5000</td>
+    <td>Male (n=82): Female (n=54)</td>
+  </tr>
+  <tr>
+    <td>Cervical cancer</td>
+    <td>miRNA</td>
+    <td>58</td>
+    <td>714</td>
+    <td>Normal (n=29): Tumor (n=29)</td>
+  </tr>
+  <tr>
+    <td>TCGA-BRCA</td>
+    <td>miRNA</td>
+    <td>1207</td>
+    <td>1404</td>
+    <td>Normal (n=104): Tumor (n=1104)</td>
+  </tr>
+  <tr>
+    <td>TCGA-BRCA</td>
+    <td>mRNA</td>
+    <td>1219</td>
+    <td>5520</td>
+    <td>Normal (n=113): Tumor (n=1106)</td>
+  </tr>
+
+</table>
+
+</body>
+</html>
+
+"	"In our study, we utilized four distinct datasets to evaluate the machine learning cumulative performance score (MLcps). The first dataset comprises mRNA data derived from a chronic lymphocytic leukemia (CLL) study. This dataset includes transcriptomic profiles from 136 individuals affected by blood cancer. Our objective was to develop a model capable of distinguishing between male and female patients using their transcriptomic profiles. To achieve this, we focused on the top 5,000 most variably expressed mRNAs, excluding genes from the Y chromosome.
+
+The second dataset was obtained from a study on cervical cancer, where the expression levels of 714 miRNAs were measured in 58 human samples. The third and fourth datasets were collected from The Cancer Genome Atlas (TCGA) and involved mRNA (n = 1,219) and miRNA (n = 1,207) sequencing of breast cancer (BRCA). For the BRCA mRNA dataset, we focused on genes that showed differential expression according to edgeR analysis, with a false discovery rate (FDR) of less than or equal to 0.001 and a fold change log(FC) greater than ±2. Our goal was to develop a model capable of distinguishing between normal and tumor samples for both the cervical cancer and TCGA-BRCA datasets.
+
+The fifth dataset in our study comprises body signal data collected from 100,000 individuals through the National Health Insurance Service in Korea. This dataset includes 21 essential biological signals related to health, such as measurements of systolic blood pressure and total cholesterol levels. Our main goal with this dataset was to determine whether individuals consume alcohol based on the available biological signal information."	Tie_Low		2026-01-28T18:43:48.514444
