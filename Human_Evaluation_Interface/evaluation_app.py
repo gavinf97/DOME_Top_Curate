@@ -13,7 +13,7 @@ DATA_DIR = "../30_human_evaluation"
 OUTPUT_FILE = "evaluation_results.tsv"
 BACKUP_FILE = "evaluation_results_backup.tsv"
 
-# Fields to evaluate (same as reformatting script)
+# Fields to evaluate
 FIELDS = [
   "publication/title",
   "publication/authors",
@@ -50,6 +50,26 @@ class EvaluationApp:
         self.root.title("DOME Human Evaluation Interface")
         self.root.geometry("1400x900")
         
+        # Configure overall theme colors and fonts
+        self.colors = {
+            "bg_main": "#F0F2F5",
+            "header_bg": "#FFFFFF",
+            "human_bg": "#E3F2FD", # Light Blue
+            "human_fg": "#0D47A1", # Darker Blue text
+            "copilot_bg": "#E8F5E9", # Light Green
+            "copilot_fg": "#1B5E20", # Darker Green text
+            "btn_primary": "#1976D2",
+            "btn_text": "#FFFFFF",
+            "text": "#212121"
+        }
+        
+        # Enhanced Font Settings - Clean, Professional, Legible
+        self.base_font = ("Helvetica", 12)
+        self.header_font = ("Helvetica", 16, "bold")
+        self.label_font = ("Helvetica", 12, "bold")
+        self.text_font = ("Helvetica", 13) 
+        self.small_font = ("Helvetica", 10)
+
         # Data State
         self.pmc_folders = sorted(glob.glob(os.path.join(DATA_DIR, "PMC*")))
         self.pmc_ids = [os.path.basename(f) for f in self.pmc_folders]
@@ -87,7 +107,6 @@ class EvaluationApp:
             self.current_field_index = 0
             return
 
-        # Create a set of (pmcid, field) tuples that are done
         done_set = set(zip(self.results_df['PMCID'], self.results_df['Field']))
         
         for i, pmcid in enumerate(self.pmc_ids):
@@ -97,16 +116,14 @@ class EvaluationApp:
                     self.current_field_index = j
                     return
         
-        # If all done
         self.current_pmc_index = len(self.pmc_ids) - 1
         self.current_field_index = len(FIELDS) - 1
-        messagebox.showinfo("Complete", "All items have been evaluated!")
+        messagebox.showinfo("Complete", "All items have been evaluated (or restarting from end)!")
 
     def save_result(self, rank, comment):
         pmcid = self.pmc_ids[self.current_pmc_index]
         field = FIELDS[self.current_field_index]
         
-        # Current Values
         val_a = self.human_data.get(field, "NA")
         val_b = self.copilot_data.get(field, "NA")
         
@@ -122,20 +139,16 @@ class EvaluationApp:
             'Timestamp': timestamp
         }
         
-        # Check if exists and update, else append
         mask = (self.results_df['PMCID'] == pmcid) & (self.results_df['Field'] == field)
         if mask.any():
-            # Update
             for col, val in new_row.items():
                 self.results_df.loc[mask, col] = val
         else:
-            # Append
             self.results_df = pd.concat([self.results_df, pd.DataFrame([new_row])], ignore_index=True)
             
-        # Save to disk
         try:
             self.results_df.to_csv(OUTPUT_FILE, sep='\t', index=False)
-            self.results_df.to_csv(BACKUP_FILE, sep='\t', index=False) # Single file backup
+            self.results_df.to_csv(BACKUP_FILE, sep='\t', index=False)
         except Exception as e:
             messagebox.showerror("Save Error", f"Could not save to file: {e}")
 
@@ -146,7 +159,6 @@ class EvaluationApp:
         pmcid = self.pmc_ids[self.current_pmc_index]
         folder_path = self.pmc_folders[self.current_pmc_index]
         
-        # Load JSONs
         human_json_path = os.path.join(folder_path, f"{pmcid}_human.json")
         copilot_json_path = os.path.join(folder_path, f"{pmcid}_copilot.json")
         
@@ -162,10 +174,8 @@ class EvaluationApp:
         except:
             self.copilot_data = {}
             
-        # Find PDFs
         self.main_pdf = os.path.join(folder_path, f"{pmcid}_main.pdf")
         self.supp_pdfs = glob.glob(os.path.join(folder_path, "*.pdf"))
-        # Exclude main pdf from supp list if present twice (glob catches all)
         self.supp_pdfs = [p for p in self.supp_pdfs if os.path.abspath(p) != os.path.abspath(self.main_pdf)]
         
         self.update_display()
@@ -174,21 +184,27 @@ class EvaluationApp:
         pmcid = self.pmc_ids[self.current_pmc_index]
         field = FIELDS[self.current_field_index]
         
-        # Title
+        # Update Titles
         self.title_label.config(text=f"PMCID: {pmcid} ({self.current_pmc_index + 1}/{len(self.pmc_ids)})")
         self.subtitle_label.config(text=f"Field: {field} ({self.current_field_index + 1}/{len(FIELDS)})")
         
         # Values
-        val_a = self.human_data.get(field, "NA")
-        val_b = self.copilot_data.get(field, "NA")
+        val_a = str(self.human_data.get(field, "NA"))
+        val_b = str(self.copilot_data.get(field, "NA"))
         
         self.text_a.delete("1.0", tk.END)
-        self.text_a.insert("1.0", str(val_a))
+        self.text_a.insert("1.0", val_a)
         
         self.text_b.delete("1.0", tk.END)
-        self.text_b.insert("1.0", str(val_b))
+        self.text_b.insert("1.0", val_b)
         
-        # Load previous rating if exists
+        # Character Counts
+        len_a = len(val_a)
+        len_b = len(val_b)
+        self.label_len_a.config(text=f"Length: {len_a} chars")
+        self.label_len_b.config(text=f"Length: {len_b} chars")
+
+        # Load previous rating
         mask = (self.results_df['PMCID'] == pmcid) & (self.results_df['Field'] == field)
         if mask.any():
             row = self.results_df[mask].iloc[0]
@@ -197,10 +213,10 @@ class EvaluationApp:
             if pd.notna(row['Comment']):
                 self.comment_entry.insert("1.0", str(row['Comment']))
         else:
-            self.rank_var.set("") # Clear selection
+            self.rank_var.set("")
             self.comment_entry.delete("1.0", tk.END)
 
-        # Update Supp PDF Dropdown
+        # Update PDF Dropdown
         self.supp_pdf_combo['values'] = [os.path.basename(p) for p in self.supp_pdfs]
         if self.supp_pdfs:
             self.supp_pdf_combo.current(0)
@@ -233,18 +249,14 @@ class EvaluationApp:
             messagebox.showerror("Error", f"Could not open PDF: {e}")
 
     def next_item(self):
-        # Validate input
         rank = self.rank_var.get()
         if not rank:
             messagebox.showwarning("Input Required", "Please select a rank.")
             return
 
         comment = self.comment_entry.get("1.0", tk.END).strip()
-        
-        # Save
         self.save_result(rank, comment)
         
-        # Increment
         self.current_field_index += 1
         if self.current_field_index >= len(FIELDS):
             self.current_field_index = 0
@@ -253,13 +265,11 @@ class EvaluationApp:
                 messagebox.showinfo("Done", "Evaluation Complete!")
                 return
             else:
-                 # Load new PMC data
                  self.load_current_data()
         
         self.update_display()
 
     def prev_item(self):
-        # Decrement
         self.current_field_index -= 1
         if self.current_field_index < 0:
             self.current_pmc_index -= 1
@@ -268,93 +278,136 @@ class EvaluationApp:
                 self.current_field_index = 0
             else:
                 self.current_field_index = len(FIELDS) - 1
-            
-            # Load new PMC data (since we might have changed PMC)
             self.load_current_data()
-            
         self.update_display()
 
     def setup_ui(self):
-        # Styles
+        # STYLES - Crucial for font fix
         style = ttk.Style()
-        style.configure("TLabel", font=("Helvetica", 12))
-        style.configure("TButton", font=("Helvetica", 11))
-        style.configure("Header.TLabel", font=("Helvetica", 14, "bold"))
+        style.theme_use('clam') 
         
+        # General Colors
+        style.configure("TFrame", background=self.colors["bg_main"])
+        style.configure("TLabelframe", background=self.colors["bg_main"])
+        # Explicit font for TLabelframe.Label
+        style.configure("TLabelframe.Label", background=self.colors["bg_main"], font=self.label_font, foreground=self.colors["text"])
+        
+        style.configure("TLabel", background=self.colors["bg_main"], font=self.base_font, foreground=self.colors["text"])
+        style.configure("TButton", font=self.base_font)
+        style.configure("TRadiobutton", background=self.colors["bg_main"], font=self.base_font, foreground=self.colors["text"])
+        style.configure("TCombobox", font=self.base_font)
+        
+        # Header Styles
+        style.configure("Header.TLabel", font=self.header_font, foreground="#37474F")
+        style.configure("SubHeader.TLabel", font=("Helvetica", 14, "italic"), foreground="#455A64")
+        
+        # Custom styles for A/B panels
+        style.configure("Human.TLabelframe", background=self.colors["human_bg"])
+        style.configure("Human.TLabelframe.Label", background=self.colors["human_bg"], foreground=self.colors["human_fg"], font=self.label_font)
+        style.configure("Copilot.TLabelframe", background=self.colors["copilot_bg"])
+        style.configure("Copilot.TLabelframe.Label", background=self.colors["copilot_bg"], foreground=self.colors["copilot_fg"], font=self.label_font)
+
         # Main Container
-        main_frame = ttk.Frame(self.root, padding="10")
+        self.root.configure(bg=self.colors["bg_main"])
+        main_frame = ttk.Frame(self.root, padding="15")
         main_frame.pack(fill=tk.BOTH, expand=True)
         
         # --- Header Section ---
         header_frame = ttk.Frame(main_frame)
-        header_frame.pack(fill=tk.X, pady=5)
+        header_frame.pack(fill=tk.X, pady=(0, 10))
         
-        self.title_label = ttk.Label(header_frame, text="PMCID: Loading...", style="Header.TLabel")
-        self.title_label.pack(side=tk.LEFT, padx=5)
+        self.title_label = ttk.Label(header_frame, text="PMCID: ...", style="Header.TLabel")
+        self.title_label.pack(side=tk.LEFT, padx=(0, 20))
         
-        self.subtitle_label = ttk.Label(header_frame, text="Field: Loading...", font=("Helvetica", 12, "italic"))
-        self.subtitle_label.pack(side=tk.LEFT, padx=15)
+        self.subtitle_label = ttk.Label(header_frame, text="Field: ...", style="SubHeader.TLabel")
+        self.subtitle_label.pack(side=tk.LEFT)
         
         # --- PDF Controls ---
-        pdf_frame = ttk.Labelframe(main_frame, text="Source Documents", padding="5")
+        pdf_frame = ttk.Labelframe(main_frame, text="Source Documents", padding="10")
         pdf_frame.pack(fill=tk.X, pady=5)
         
-        ttk.Button(pdf_frame, text="Open Main PDF", command=self.open_main_pdf).pack(side=tk.LEFT, padx=5)
+        ttk.Button(pdf_frame, text="📄 Open Main PDF", command=self.open_main_pdf).pack(side=tk.LEFT, padx=(0, 15))
         
-        ttk.Label(pdf_frame, text="Supplementary:").pack(side=tk.LEFT, padx=10)
-        self.supp_pdf_combo = ttk.Combobox(pdf_frame, state="readonly", width=40)
-        self.supp_pdf_combo.pack(side=tk.LEFT, padx=5)
-        self.btn_open_supp = ttk.Button(pdf_frame, text="Open Supp PDF", command=self.open_supp_pdf)
-        self.btn_open_supp.pack(side=tk.LEFT, padx=5)
+        ttk.Label(pdf_frame, text="Supplementary:").pack(side=tk.LEFT, padx=(0, 5))
+        # Combobox font is handled by option_add for drop down list usually, but here handled by style
+        self.supp_pdf_combo = ttk.Combobox(pdf_frame, state="readonly", width=40, font=self.base_font)
+        self.supp_pdf_combo.pack(side=tk.LEFT, padx=(0, 10))
+        self.btn_open_supp = ttk.Button(pdf_frame, text="📎 Open Supp PDF", command=self.open_supp_pdf)
+        self.btn_open_supp.pack(side=tk.LEFT)
         
         # --- Comparison Section ---
         comp_frame = ttk.Frame(main_frame)
         comp_frame.pack(fill=tk.BOTH, expand=True, pady=10)
         
         # Left: Human (A)
-        frame_a = ttk.Labelframe(comp_frame, text="Verify A: Human Annotation", padding="5")
-        frame_a.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
-        self.text_a = scrolledtext.ScrolledText(frame_a, height=15, font=("Consolas", 11))
+        frame_a = ttk.Labelframe(comp_frame, text="Verify A: Human Annotation", style="Human.TLabelframe", padding="10")
+        frame_a.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 10))
+        
+        self.text_a = scrolledtext.ScrolledText(frame_a, height=15, font=self.text_font, bg=self.colors["header_bg"], padx=10, pady=10)
         self.text_a.pack(fill=tk.BOTH, expand=True)
         
+        # Length Label A
+        self.label_len_a = ttk.Label(frame_a, text="Length: 0 chars", background=self.colors["human_bg"], foreground="#546E7A", font=self.small_font)
+        self.label_len_a.pack(anchor=tk.E, pady=(5, 0))
+
         # Right: Copilot (B)
-        frame_b = ttk.Labelframe(comp_frame, text="Verify B: Copilot Annotation", padding="5")
-        frame_b.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
-        self.text_b = scrolledtext.ScrolledText(frame_b, height=15, font=("Consolas", 11))
+        frame_b = ttk.Labelframe(comp_frame, text="Verify B: Copilot Annotation", style="Copilot.TLabelframe", padding="10")
+        frame_b.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        self.text_b = scrolledtext.ScrolledText(frame_b, height=15, font=self.text_font, bg=self.colors["header_bg"], padx=10, pady=10)
         self.text_b.pack(fill=tk.BOTH, expand=True)
         
+        # Length Label B
+        self.label_len_b = ttk.Label(frame_b, text="Length: 0 chars", background=self.colors["copilot_bg"], foreground="#546E7A", font=self.small_font)
+        self.label_len_b.pack(anchor=tk.E, pady=(5, 0))
+
         # --- Rating Section ---
-        rating_frame = ttk.Labelframe(main_frame, text="Rank & Comment", padding="10")
-        rating_frame.pack(fill=tk.X, pady=5)
+        rating_frame = ttk.Labelframe(main_frame, text="Evaluation", padding="15")
+        rating_frame.pack(fill=tk.X, pady=10)
         
-        # Radio Buttons
+        # Rank Options
         self.rank_var = tk.StringVar()
         r_frame = ttk.Frame(rating_frame)
-        r_frame.pack(fill=tk.X)
+        r_frame.pack(fill=tk.X, pady=(0, 10))
         
         opts = [
-            ("A is Better (Human has fewer errors)", "A_Better"),
-            ("B is Better (Copilot has fewer errors)", "B_Better"),
-            ("Tie - High Quality (Both perfect)", "Tie_High"),
-            ("Tie - Low Quality (Both failed)", "Tie_Low")
+            ("A is Better (Human)", "A_Better"),
+            ("B is Better (Copilot)", "B_Better"),
+            ("Tie (High Quality)", "Tie_High"),
+            ("Tie (Low Quality)", "Tie_Low")
         ]
         
         for text, val in opts:
-            ttk.Radiobutton(r_frame, text=text, variable=self.rank_var, value=val).pack(side=tk.LEFT, padx=20)
+            rb = ttk.Radiobutton(r_frame, text=text, variable=self.rank_var, value=val)
+            rb.pack(side=tk.LEFT, padx=(0, 30))
             
         # Comment
-        ttk.Label(rating_frame, text="Comments:").pack(anchor=tk.W, pady=(10, 0))
-        self.comment_entry = tk.Text(rating_frame, height=3, font=("Helvetica", 11))
-        self.comment_entry.pack(fill=tk.X, pady=5)
+        ttk.Label(rating_frame, text="Comments:", font=self.label_font).pack(anchor=tk.W, pady=(5, 0))
+        self.comment_entry = tk.Text(rating_frame, height=3, font=self.text_font, padx=5, pady=5)
+        self.comment_entry.pack(fill=tk.X, pady=(5, 0))
         
         # --- Navigation Footer ---
         nav_frame = ttk.Frame(main_frame)
-        nav_frame.pack(fill=tk.X, pady=10)
+        nav_frame.pack(fill=tk.X, pady=15)
         
         ttk.Button(nav_frame, text="<< Previous", command=self.prev_item).pack(side=tk.LEFT)
-        ttk.Button(nav_frame, text="Save & Next >>", command=self.next_item).pack(side=tk.RIGHT)
+        
+        # Custom button for primary action to ensure it pops
+        btn_next = tk.Button(nav_frame, text="Save & Next >>", command=self.next_item, 
+                             bg=self.colors["btn_primary"], fg=self.colors["btn_text"], 
+                             font=("Helvetica", 14, "bold"), padx=25, pady=8, relief=tk.FLAT)
+        btn_next.pack(side=tk.RIGHT)
+
+    @property
+    def main_font_family(self):
+        return "Helvetica"
 
 if __name__ == "__main__":
     root = tk.Tk()
+    # Ensure HighDPI awareness on Windows/Linux if applicable
+    try:
+        root.tk.call('tk', 'scaling', 1.5) 
+    except:
+        pass
     app = EvaluationApp(root)
     root.mainloop()
