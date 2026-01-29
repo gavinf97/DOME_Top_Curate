@@ -44,6 +44,101 @@ FIELDS = [
   "evaluation/availability"
 ]
 
+# DOME Questions Mapping
+FIELD_QUESTIONS = {
+    "dataset/provenance": [
+        "What is the source of the data (database, publication, direct experiment)?",
+        "If data are in classes, how many data points are available in each class—for example, total for the positive (Npos) and negative (Nneg) cases?",
+        "If regression, how many real value points are there?",
+        "Has the dataset been previously used by other papers and/or is it recognised by the community?"
+    ],
+    "dataset/splits": [
+        "How many data points are in the training and test sets?",
+        "Was a separate validation set used, and if yes, how large was it?",
+        "Are the distributions of data types in the training and test sets different?",
+        "Are the distributions of data types in both training and test sets plotted?"
+    ],
+    "dataset/redundancy": [
+        "How were the sets split?",
+        "Are the training and test sets independent?",
+        "How was this enforced (for example, redundancy reduction to less than X% pairwise identity)?",
+        "How does the distribution compare to previously published ML datasets?"
+    ],
+    "dataset/availability": [
+        "Are the data, including the data splits used, released in a public forum?",
+        "If yes, where (for example, supporting material, URL) and how (license)?"
+    ],
+    "optimization/algorithm": [
+        "What is the ML algorithm class used?",
+        "Is the ML algorithm new?",
+        "If yes, why was it chosen over better known alternatives?"
+    ],
+    "optimization/meta": [
+        "Does the model use data from other ML algorithms as input?",
+        "If yes, which ones?",
+        "Is it clear that training data of initial predictors and meta-predictor are independent of test data for the meta-predictor?"
+    ],
+    "optimization/encoding": [
+        "How were the data encoded and preprocessed for the ML algorithm?"
+    ],
+    "optimization/parameters": [
+        "How many parameters (p) are used in the model?",
+        "How was p selected?"
+    ],
+    "optimization/features": [
+        "How many features (f) are used as input?",
+        "Was feature selection performed?",
+        "If yes, was it performed using the training set only?"
+    ],
+    "optimization/fitting": [
+        "Is p much larger than the number of training points and/or is f large (for example, in classification is p ≫ (Npos+Nneg) and/or f > 100)?",
+        "If yes, how was overfitting ruled out?",
+        "Conversely, if the number of training points is much larger than p and/or f is small (for example, (Npos+Nneg) ≫ p and/or f < 5), how was underfitting ruled out?"
+    ],
+    "optimization/regularization": [
+        "Were any overfitting prevention techniques used (for example, early stopping using a validation set)?",
+        "If yes, which ones?"
+    ],
+    "optimization/config": [
+        "Are the hyperparameter configurations, optimisation schedule, model files and optimisation parameters reported?",
+        "If yes, where (for example, URL) and how (license)?"
+    ],
+    "model/interpretability": [
+        "Is the model black box or interpretable?",
+        "If the model is interpretable, can you give clear examples of this?"
+    ],
+    "model/output": [
+        "Is the model classification or regression?"
+    ],
+    "model/duration": [
+        "How much time does a single representative prediction require on a standard machine (for example, seconds on a desktop PC or high-performance computing cluster)?"
+    ],
+    "model/availability": [
+        "Is the source code released?",
+        "Is a method to run the algorithm—such as executable, web server, virtual machine or container instance—released?",
+        "If yes, where (for example, URL) and how (license)?"
+    ],
+    "evaluation/method": [
+        "How was the method evaluated (for example cross-validation, independent dataset, novel experiments)?"
+    ],
+    "evaluation/measure": [
+        "Which performance metrics are reported?",
+        "Is this set representative (for example, compared to the literature)?"
+    ],
+    "evaluation/comparison": [
+        "Was a comparison to publicly available methods performed on benchmark datasets?",
+        "Was a comparison to simpler baselines performed?"
+    ],
+    "evaluation/confidence": [
+        "Do the performance metrics have confidence intervals?",
+        "Are the results statistically significant to claim that the method is superior to others and baselines?"
+    ],
+    "evaluation/availability": [
+        "Are the raw evaluation files (for example, assignments for comparison and baselines, statistical code, confusion matrices) available?",
+        "If yes, where (for example, URL) and how (license)?"
+    ]
+}
+
 class EvaluationApp:
     def __init__(self, root):
         self.root = root
@@ -194,6 +289,15 @@ class EvaluationApp:
         self.title_label.config(text=f"PMCID: {pmcid} ({self.current_pmc_index + 1}/{len(self.pmc_ids)})")
         self.subtitle_label.config(text=f"Field: {field} ({self.current_field_index + 1}/{len(FIELDS)})")
         
+        # Update Questions
+        questions = FIELD_QUESTIONS.get(field, [])
+        if questions:
+            q_text = "\n".join([f"• {q}" for q in questions])
+            self.question_label.config(text=q_text, foreground="#004D40") # Dark teal for guidance
+            self.question_frame.pack(fill=tk.X, pady=5, before=self.pdf_frame) # Ensure it stays visible
+        else:
+            self.question_label.config(text="No specific questions for this field.", foreground="#78909C")
+
         # Values
         val_a = str(self.human_data.get(field, "NA"))
         val_b = str(self.copilot_data.get(field, "NA"))
@@ -339,10 +443,24 @@ class EvaluationApp:
         ttk.Button(pdf_frame, text="📄 Open Main PDF", command=self.open_main_pdf).pack(side=tk.LEFT, padx=(0, 15))
         
         ttk.Label(pdf_frame, text="Supplementary:").pack(side=tk.LEFT, padx=(0, 5))
+        # CombQuestion / Guidance Section ---
+        self.question_frame = ttk.Labelframe(main_frame, text="DOME Guidelines / Questions", padding="10")
+        self.question_frame.pack(fill=tk.X, pady=5)
+        
+        self.question_label = ttk.Label(self.question_frame, text="", wraplength=1300, justify=tk.LEFT)
+        self.question_label.pack(anchor=tk.W)
+
+        # --- PDF Controls ---
+        self.pdf_frame = ttk.Labelframe(main_frame, text="Source Documents", padding="10")
+        self.pdf_frame.pack(fill=tk.X, pady=5)
+        
+        ttk.Button(self.pdf_frame, text="📄 Open Main PDF", command=self.open_main_pdf).pack(side=tk.LEFT, padx=(0, 15))
+        
+        ttk.Label(self.pdf_frame, text="Supplementary:").pack(side=tk.LEFT, padx=(0, 5))
         # Combobox font is handled by option_add for drop down list usually, but here handled by style
-        self.supp_pdf_combo = ttk.Combobox(pdf_frame, state="readonly", width=40, font=self.base_font)
+        self.supp_pdf_combo = ttk.Combobox(self.pdf_frame, state="readonly", width=40, font=self.base_font)
         self.supp_pdf_combo.pack(side=tk.LEFT, padx=(0, 10))
-        self.btn_open_supp = ttk.Button(pdf_frame, text="📎 Open Supp PDF", command=self.open_supp_pdf)
+        self.btn_open_supp = ttk.Button(self.pdf_frame, text="📎 Open Supp PDF", command=self.open_supp_pdf)
         self.btn_open_supp.pack(side=tk.LEFT)
         
         # --- Comparison Section ---

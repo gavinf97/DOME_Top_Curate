@@ -78,4 +78,14 @@ th {
 
 The second dataset was obtained from a study on cervical cancer, where the expression levels of 714 miRNAs were measured in 58 human samples. The third and fourth datasets were collected from The Cancer Genome Atlas (TCGA) and involved mRNA (n = 1,219) and miRNA (n = 1,207) sequencing of breast cancer (BRCA). For the BRCA mRNA dataset, we focused on genes that showed differential expression according to edgeR analysis, with a false discovery rate (FDR) of less than or equal to 0.001 and a fold change log(FC) greater than ±2. Our goal was to develop a model capable of distinguishing between normal and tumor samples for both the cervical cancer and TCGA-BRCA datasets.
 
-The fifth dataset in our study comprises body signal data collected from 100,000 individuals through the National Health Insurance Service in Korea. This dataset includes 21 essential biological signals related to health, such as measurements of systolic blood pressure and total cholesterol levels. Our main goal with this dataset was to determine whether individuals consume alcohol based on the available biological signal information."	Tie_Low		2026-01-28T18:43:48.514444
+The fifth dataset in our study comprises body signal data collected from 100,000 individuals through the National Health Insurance Service in Korea. This dataset includes 21 essential biological signals related to health, such as measurements of systolic blood pressure and total cholesterol levels. Our main goal with this dataset was to determine whether individuals consume alcohol based on the available biological signal information."	Tie_Low	"Copilot must title each repsonse reply for broken down Qs - currently gives one big prosauc repsonse; must differentiate. 
+e.g. not clear which is: 
+-Source of the dataset?
+-Number of data points?
+-Data used in previous paper and/or by community? so - repsonse coverage is poor to reattribute. Although in this case superior vs human. 
+
+Should have NA or not enough info on each one. 
+
+Copilot idenitfied 5th dataset not disclosed by author but clear in the paper. DIrect text etarctions - maybe refomrt to third person 'our study'
+
+Prveious data use no comment BUT this is hard to be explained - some comment needed (note NA/Not enoguh info needed) - but oevrall good by copilot"	2026-01-29T10:16:38.344504
