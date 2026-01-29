@@ -436,16 +436,22 @@ class EvaluationApp:
         self.subtitle_label = ttk.Label(header_frame, text="Field: ...", style="SubHeader.TLabel")
         self.subtitle_label.pack(side=tk.LEFT)
         
-        # --- PDF Controls ---
-        pdf_frame = ttk.Labelframe(main_frame, text="Source Documents", padding="10")
-        pdf_frame.pack(fill=tk.X, pady=5)
+        # --- Navigation Top (Moved from Footer) ---
+        nav_frame = ttk.Frame(main_frame)
+        nav_frame.pack(fill=tk.X, pady=(0, 10))
         
-        ttk.Button(pdf_frame, text="📄 Open Main PDF", command=self.open_main_pdf).pack(side=tk.LEFT, padx=(0, 15))
+        ttk.Button(nav_frame, text="<< Previous", command=self.prev_item).pack(side=tk.LEFT)
         
-        ttk.Label(pdf_frame, text="Supplementary:").pack(side=tk.LEFT, padx=(0, 5))
-        # CombQuestion / Guidance Section ---
+        # Custom button for primary action to ensure it pops
+        btn_next = tk.Button(nav_frame, text="Save & Next >>", command=self.next_item, 
+                             bg=self.colors["btn_primary"], fg=self.colors["btn_text"], 
+                             font=("Helvetica", 14, "bold"), padx=25, pady=8, relief=tk.FLAT)
+        btn_next.pack(side=tk.RIGHT)
+
+        # --- Question / Guidance Section ---
         self.question_frame = ttk.Labelframe(main_frame, text="DOME Guidelines / Questions", padding="10")
         self.question_frame.pack(fill=tk.X, pady=5)
+
         
         self.question_label = ttk.Label(self.question_frame, text="", wraplength=1300, justify=tk.LEFT)
         self.question_label.pack(anchor=tk.W)
@@ -513,18 +519,8 @@ class EvaluationApp:
         ttk.Label(rating_frame, text="Comments:", font=self.label_font).pack(anchor=tk.W, pady=(5, 0))
         self.comment_entry = tk.Text(rating_frame, height=3, font=self.text_font, padx=5, pady=5)
         self.comment_entry.pack(fill=tk.X, pady=(5, 0))
-        
-        # --- Navigation Footer ---
-        nav_frame = ttk.Frame(main_frame)
-        nav_frame.pack(fill=tk.X, pady=15)
-        
-        ttk.Button(nav_frame, text="<< Previous", command=self.prev_item).pack(side=tk.LEFT)
-        
-        # Custom button for primary action to ensure it pops
-        btn_next = tk.Button(nav_frame, text="Save & Next >>", command=self.next_item, 
-                             bg=self.colors["btn_primary"], fg=self.colors["btn_text"], 
-                             font=("Helvetica", 14, "bold"), padx=25, pady=8, relief=tk.FLAT)
-        btn_next.pack(side=tk.RIGHT)
+
+        # Note: Navigation moved to the top
 
     @property
     def main_font_family(self):
