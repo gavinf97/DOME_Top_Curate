@@ -2273,3 +2273,17 @@ PMC4894951	publication/authors	Schnoerr D, Grima R, Sanguinetti G	Schnoerr David
 PMC4894951	publication/journal	Nat Commun	Nature communications	B_Better		2026-01-30T14:39:37.363804
 PMC4894951	publication/year	2016	2016	B_Better		2026-01-30T14:39:41.305515
 PMC4894951	publication/doi	10.1038/ncomms11729	10.1038/ncomms11729	B_Better		2026-01-30T14:39:44.967669
+PMC4894951	publication/tags	[]	"- Stochastic reaction–diffusion processes
+- Parameter inference
+- Model selection
+- Systems biology
+- Epidemiology
+- Bayesian information criterion
+- Point process models
+- Spatial statistics
+- Computational modeling
+- Statistical physics"	B_Better		2026-01-30T14:45:08.393175
+PMC4894951	dataset/provenance	PDB	The dataset used in our study is sourced from the FlyEx database. This database provides quantitative data on segmentation gene expression at cellular resolution. Specifically, we utilized fluorescence intensity measurements for the bicoid protein at cleavage stage 13 in the Drosophila embryo. The data consists of measurements from 17 embryos, which are available for public access and have been previously used in the community for similar studies. The measurements are taken on a spatial grid, offering detailed insights into the protein's expression and diffusion across the embryo. This dataset is particularly valuable for understanding the spatial dynamics of gene expression in developmental biology.	B_Better		2026-01-30T14:45:50.176885
+PMC4894951	dataset/splits	100 pos, 2000 neg	Not enough information is available.	B_Better		2026-01-30T14:45:57.036962
+PMC4894951	dataset/redundancy	Independence	Not enough information is available.	B_Better		2026-01-30T14:46:02.221434
+PMC4894951	dataset/availability	Yes	The data used in our study, specifically the fluorescence intensity measurements for the bicoid protein in Drosophila embryos, is publicly available. This data can be obtained from the FlyEx database. The dataset consists of measurements from 17 embryos at cleavage stage 13, providing a comprehensive resource for analyzing gene expression patterns. The data is shared under a Creative Commons Attribution 4.0 International License, which allows for open access and reuse with proper attribution. This licensing ensures that researchers can freely access and utilize the data for further studies, promoting transparency and reproducibility in scientific research.	B_Better		2026-01-30T14:46:09.060804
