@@ -182,9 +182,66 @@ class EvaluationApp:
         self.find_first_incomplete()
         
         # UI Setup
+        self.load_curator_mappings()
         self.setup_ui()
         self.load_current_data()
         self.update_display()
+
+    def load_curator_mappings(self):
+        self.doi_to_user_oid = {}
+        self.user_details = {}
+        
+        # Paths - DATA_DIR is "../30_human_evaluation"
+        # We need to go up one level from DATA_DIR to find DOME_Registry_JSON_Files
+        workspace_root = os.path.dirname(DATA_DIR) # "../"
+        raw_reviews_path = os.path.join(workspace_root, "DOME_Registry_JSON_Files", "dome_review_raw_human_20260128.json")
+        users_path = os.path.join(workspace_root, "DOME_Registry_JSON_Files", "dome_users_20260130.json")
+        
+        # Verify paths - the script runs from Human_Evaluation_Interface/
+        # DATA_DIR is relative to script location. 
+        # Actually, let's use os.path.abspath to be safe.
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        registry_dir = os.path.join(os.path.dirname(script_dir), "DOME_Registry_JSON_Files")
+        
+        raw_reviews_path = os.path.join(registry_dir, "dome_review_raw_human_20260128.json")
+        users_path = os.path.join(registry_dir, "dome_users_20260130.json")
+
+        print(f"Loading curator mappings from {users_path}...")
+
+        # Load DOI -> OID map
+        try:
+            if os.path.exists(raw_reviews_path):
+                with open(raw_reviews_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    for entry in data:
+                        doi = entry.get('publication', {}).get('doi', '')
+                        user_oid = entry.get('user', {}).get('$oid', '')
+                        if doi and user_oid:
+                            self.doi_to_user_oid[doi.strip()] = user_oid
+            else:
+                print(f"Warning: Raw reviews file not found at {raw_reviews_path}")
+        except Exception as e:
+            print(f"Error loading raw reviews for mapping: {e}")
+
+        # Load OID -> User Details
+        try:
+            if os.path.exists(users_path):
+                with open(users_path, 'r', encoding='utf-8') as f:
+                    users = json.load(f)
+                    for u in users:
+                        oid = u.get('_id', {}).get('$oid', '')
+                        if oid:
+                            self.user_details[oid] = {
+                                'name': u.get('name', ''),
+                                'surname': u.get('surname', ''),
+                                'email': u.get('email', ''),
+                                'orcid': u.get('orcid', ''),
+                                'roles': u.get('roles', '')
+                            }
+            else:
+                print(f"Warning: Users file not found at {users_path}")
+        except Exception as e:
+            print(f"Error loading users: {e}")
 
     def load_existing_results(self):
         if os.path.exists(OUTPUT_FILE):
@@ -288,6 +345,27 @@ class EvaluationApp:
         # Update Titles
         self.title_label.config(text=f"PMCID: {pmcid} ({self.current_pmc_index + 1}/{len(self.pmc_ids)})")
         self.subtitle_label.config(text=f"Field: {field} ({self.current_field_index + 1}/{len(FIELDS)})")
+
+        # Curator Update
+        curator_text = "Curator: Unknown"
+        current_doi = str(self.human_data.get('publication/doi', '')).strip()
+        
+        if current_doi in self.doi_to_user_oid:
+            user_oid = self.doi_to_user_oid[current_doi]
+            if user_oid in self.user_details:
+                u = self.user_details[user_oid]
+                name = f"{u['name']} {u['surname']}".strip()
+                if not name: name = "Unknown Name"
+                email = u['email'] if u['email'] else ""
+                orcid = u['orcid'] if u['orcid'] else ""
+                
+                curator_text = f"Curator: {name}"
+                if email: curator_text += f" | {email}"
+                if orcid: curator_text += f" | ORCID: {orcid}"
+        else:
+             curator_text = f"Curator: Unknown (DOI: {current_doi})"
+        
+        self.curator_label.config(text=curator_text)
         
         # Update Questions
         questions = FIELD_QUESTIONS.get(field, [])
@@ -430,11 +508,17 @@ class EvaluationApp:
         header_frame = ttk.Frame(main_frame)
         header_frame.pack(fill=tk.X, pady=(0, 10))
         
-        self.title_label = ttk.Label(header_frame, text="PMCID: ...", style="Header.TLabel")
+        top_row = ttk.Frame(header_frame)
+        top_row.pack(fill=tk.X)
+
+        self.title_label = ttk.Label(top_row, text="PMCID: ...", style="Header.TLabel")
         self.title_label.pack(side=tk.LEFT, padx=(0, 20))
         
-        self.subtitle_label = ttk.Label(header_frame, text="Field: ...", style="SubHeader.TLabel")
+        self.subtitle_label = ttk.Label(top_row, text="Field: ...", style="SubHeader.TLabel")
         self.subtitle_label.pack(side=tk.LEFT)
+        
+        self.curator_label = ttk.Label(header_frame, text="Curator: ...", font=("Helvetica", 11, "bold"), foreground="#1565C0")
+        self.curator_label.pack(anchor=tk.W, pady=(5, 0))
         
         # --- Navigation Top (Moved from Footer) ---
         nav_frame = ttk.Frame(main_frame)
