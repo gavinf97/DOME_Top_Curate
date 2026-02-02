@@ -1,0 +1,2550 @@
+[{
+  "_id": {
+    "$oid": "6312169df3794236aa9879df"
+  },
+  "email": "martina.bevilacqua1991@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879e1"
+  },
+  "email": "emidio.capriotti@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879e5"
+  },
+  "email": "andrewhatos@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879e7"
+  },
+  "email": "sermarcue@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879e9"
+  },
+  "email": "nils.hoffmann@cebitec.uni-bielefeld.de",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879ed"
+  },
+  "email": "konstantinoskyritsis@certh.gr",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879f0"
+  },
+  "email": "castrense.savojardo2@unibo.it",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879f2"
+  },
+  "email": "tlenaert@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879f4"
+  },
+  "email": "ptrck.rch@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879f6"
+  },
+  "email": "federico.zambelli@unimi.it",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879fc"
+  },
+  "email": "mazurenko@mail.muni.cz",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa9879fe"
+  },
+  "email": "pierluigi.martelli@unibo.it",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a01"
+  },
+  "email": "franco.pradelli94@gmail.com",
+  "name": "Franco",
+  "orcid": "0000-0002-7152-5512",
+  "surname": "Pradelli",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a03"
+  },
+  "email": "martina.bevilacqua1992@gmail.com",
+  "name": "Martina",
+  "orcid": "0000-0001-7619-871X",
+  "surname": "Bevilacqua",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a0a"
+  },
+  "email": "piero.fariselli@unito.it",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a0c"
+  },
+  "email": "federico.zambelli@gmail.com",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a13"
+  },
+  "email": "ljgarcia@zbmed.de",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a1b"
+  },
+  "email": "sfragkoul@certh.gr",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a36"
+  },
+  "email": "patrick.ruch@hesge.ch",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6312169df3794236aa987a77"
+  },
+  "email": "sheriff@ebi.ac.uk",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6352a09df3794236aa319af7"
+  },
+  "orcid": "0000-0003-1065-588X",
+  "__v": 0,
+  "name": "Damiano Clementel",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "63756496f3794236aa7dd284"
+  },
+  "orcid": "0000-0002-7395-2921",
+  "__v": 0,
+  "name": "Damiano Clementel",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "637e30dcf3794236aa8f0544"
+  },
+  "orcid": "0000-0003-4525-7793",
+  "__v": 0,
+  "name": "Silvio Tosatto",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "63992de57417daebc3c00985"
+  },
+  "orcid": "0000-0003-2051-487X",
+  "__v": 0,
+  "name": "qian luo",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "63f741227417daebc38e7a94"
+  },
+  "orcid": "0000-0001-8210-2390",
+  "__v": 0,
+  "name": "Damiano Piovesan",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64218a3a92c76639b8e34c41"
+  },
+  "orcid": "0000-0002-6540-6875",
+  "__v": 0,
+  "name": "Nils Hoffmann",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6435665292c76639b80869bd"
+  },
+  "orcid": "0000-0002-8500-1357",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "jxchen.ustc@gmail.com",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "643fe8a892c76639b81bfe5f"
+  },
+  "orcid": "0000-0002-1190-9485",
+  "__v": 0,
+  "name": "Tobias Rehfeldt",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64477dd792c76639b829b9a0"
+  },
+  "orcid": "0000-0002-4667-9528",
+  "__v": 0,
+  "name": "Mary Ann Tuli",
+  "roles": "user",
+  "organisation": "GigaScience",
+  "email": "maryann@gigascienejournal.com",
+  "organizations": [
+    "academia",
+    "GigaScience",
+    "GigaByte"
+  ]
+},
+{
+  "_id": {
+    "$oid": "644793f492c76639b829e307"
+  },
+  "orcid": "0000-0002-9952-8141",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "chrisa@gigasciencejournal.com",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "644b882592c76639b831a49b"
+  },
+  "orcid": "0000-0003-3986-0510",
+  "__v": 0,
+  "name": "Leyla Jael Castro",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "644e860992c76639b837944c"
+  },
+  "orcid": "0000-0001-8710-8740",
+  "__v": 0,
+  "name": "Le Li",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6454174d92c76639b843f17b"
+  },
+  "orcid": "0000-0002-8324-2624",
+  "__v": 0,
+  "name": "Hyun Jung Park",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6465d2d592c76639b8669c75"
+  },
+  "orcid": "0009-0006-3210-6055",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "648c696c92c76639b8bb57cb"
+  },
+  "orcid": "0009-0000-4401-6504",
+  "__v": 0,
+  "name": "",
+  "roles": "admin",
+  "organisation": "academia",
+  "organizations": [
+    "academia",
+    "GigaScience",
+    "GigaByte",
+    "bioRxiv"
+  ],
+  "email": "attafighani@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "64999a7f92c76639b8e3d38a"
+  },
+  "orcid": "0009-0002-2327-9430",
+  "__v": 0,
+  "name": "Omar Abdelghani ATTAFI",
+  "roles": "admin",
+  "email": "attafighani@gmail.com",
+  "organisation": "GigaScience",
+  "organizations": [
+    "academia",
+    "GigaByte",
+    "GigaScience",
+    "bioRxiv"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64a6850f92c76639b80497bc"
+  },
+  "orcid": "0000-0002-0292-7972",
+  "__v": 0,
+  "name": "Tim Beck",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64a7b39792c76639b80763ad"
+  },
+  "orcid": "0000-0001-7525-9218",
+  "__v": 0,
+  "name": "Marek Suchánek",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64a80caa92c76639b8082168"
+  },
+  "orcid": "0000-0001-8926-582X",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ],
+  "email": "michalburdukiewicz@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "64b010fc92c76639b81b7db9"
+  },
+  "orcid": "0000-0003-0362-8218",
+  "__v": 0,
+  "name": "Alexander Miguel Monzon",
+  "roles": "admin",
+  "organisation": "biocomp",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64be6bbe92c76639b8438610"
+  },
+  "orcid": "0000-0002-0222-4273",
+  "__v": 0,
+  "name": "Fotis E. Psomopoulos",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64ffbbb492c76639b801efb4"
+  },
+  "orcid": "0000-0002-5162-9568",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "64ffe67792c76639b8025f34"
+  },
+  "orcid": "0009-0004-5093-2516",
+  "__v": 0,
+  "name": "Lin Liu",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "651ac93d92c76639b850254d"
+  },
+  "orcid": "0000-0003-1984-4265",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "fengtaosmu@foxmail.com",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "651af22e92c76639b8507dba"
+  },
+  "orcid": "0000-0003-2472-8541",
+  "__v": 0,
+  "name": "宏伟 周",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "651bcf4792c76639b8537ad6"
+  },
+  "orcid": "0000-0002-1335-0881",
+  "__v": 0,
+  "name": "Chris Hunter",
+  "roles": "user",
+  "organisation": "GigaScience",
+  "email": "chris@gigasciencejournal.com",
+  "organizations": [
+    "academia",
+    "GigaScience",
+    "GigaByte"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6524d2c192c76639b86d0c94"
+  },
+  "orcid": "0000-0001-6444-1436",
+  "__v": 0,
+  "name": "Scott C Edmunds",
+  "roles": "admin",
+  "organisation": "GigaScience",
+  "organizations": [
+    "academia",
+    "GigaScience",
+    "GigaByte"
+  ]
+},
+{
+  "_id": {
+    "$oid": "652556ed92c76639b86e085d"
+  },
+  "orcid": "0000-0002-0955-8284",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "655f2c0692c76639b8282361"
+  },
+  "orcid": "0000-0003-2452-0572",
+  "__v": 0,
+  "name": "Zongxiong Chen",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dc1fd92c76639b8647287"
+  },
+  "orcid": "0000-0002-9561-7817",
+  "__v": 0,
+  "name": "Hengchuang Yin",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6570609b92c76639b882f9ca"
+  },
+  "orcid": "0000-0002-7736-0077",
+  "__v": 0,
+  "name": "Xue-Song Liu",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "657062d992c76639b8830025"
+  },
+  "orcid": "0000-0003-0535-7474",
+  "__v": 0,
+  "name": "Diao Kaixuan",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65ae9c3492c76639b8a4e1bf"
+  },
+  "orcid": "0000-0001-8108-2033",
+  "__v": 0,
+  "name": "Vojtech Spiwok",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65b922e992c76639b8d36bc2"
+  },
+  "orcid": "0000-0002-8052-3519",
+  "__v": 0,
+  "name": "Alessio Del Conte",
+  "roles": "user",
+  "organisation": "undefined",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65d6a5c492c76639b881cd51"
+  },
+  "orcid": "0000-0002-3800-212X",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "email": "sethfrazer@ucsb.edu",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65d6d16192c76639b8824caf"
+  },
+  "orcid": "0009-0000-7920-2163",
+  "__v": 0,
+  "name": "Huamei Li",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65e73fdb92c76639b8e309f3"
+  },
+  "orcid": "0009-0005-4671-0360",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "organisation": "undefined",
+  "email": "soroush.mozaffari@studenti.unipd.it",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f410ad92c76639b816bef8"
+  },
+  "orcid": "0000-0002-1071-4993",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "email": "gwchen3-c@my.cityu.edu.hk",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f5872f92c76639b81bea33"
+  },
+  "orcid": "0000-0003-1373-8023",
+  "__v": 0,
+  "name": "Yanni SUN",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65faa4f792c76639b82bab29"
+  },
+  "orcid": "0000-0001-9174-511X",
+  "__v": 0,
+  "name": "MARIA PAOLA TURINA",
+  "roles": "user",
+  "email": "paola.turina@unibo.it",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65fc10d492c76639b83175d9"
+  },
+  "orcid": "0000-0003-3487-4331",
+  "__v": 0,
+  "name": "Federico Zambelli",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65fc3fbc92c76639b832db26"
+  },
+  "orcid": "0000-0002-2848-628X",
+  "__v": 0,
+  "name": "Calogero Raffaele",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6603042f92c76639b849e69f"
+  },
+  "orcid": "0000-0002-7359-0633",
+  "__v": 0,
+  "email": "castrense.savojardo2@unibo.it",
+  "name": "",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6606ad9392c76639b85a40fd"
+  },
+  "orcid": "0000-0002-7223-9382",
+  "__v": 0,
+  "email": "lukasz.pruss.1993@gmail.com",
+  "name": "",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "660c1bce92c76639b86a24ff"
+  },
+  "orcid": "0000-0003-0321-420X",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "email": "rafsan.ahmed@med.lu.se",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6613906d92c76639b884109e"
+  },
+  "orcid": "0000-0002-0468-0117",
+  "__v": 0,
+  "name": "ALTUNA AKALIN",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66193ab192c76639b89a4b9c"
+  },
+  "orcid": "0000-0001-9214-5837",
+  "__v": 0,
+  "email": "jenhw@dtu.dk",
+  "name": "Jen-Hung Wang",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "661e294a92c76639b8a6ac73"
+  },
+  "orcid": "0009-0000-1637-6764",
+  "__v": 0,
+  "name": "",
+  "roles": "user",
+  "email": "fyw19991022@gmail.com",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66213f37b2aaa82f502f52d5"
+  },
+  "orcid": "0009-0006-8028-3822",
+  "__v": 0,
+  "email": "l.lexi@wustl.edi",
+  "name": "Lexi Luo",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "665313e37089c469b446f9b6"
+  },
+  "orcid": "0009-0006-4469-6187",
+  "__v": 0,
+  "name": "Jeonghoon Choi",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "665a01aa7089c469b4646267"
+  },
+  "orcid": "0000-0001-5166-8551",
+  "__v": 0,
+  "email": "gavinmichael.farrell@studenti.unipd.it",
+  "name": "Gavin Farrell",
+  "organisation": "biocomp",
+  "roles": "admin",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "666996517089c469b4b4ef14"
+  },
+  "orcid": "0000-0003-2324-086X",
+  "__v": 0,
+  "name": "Bruno Fosso",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "667167e37089c469b4d53947"
+  },
+  "orcid": "0000-0002-6349-2722",
+  "__v": 0,
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "email": "sharma.51@iitj.ac.in",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6682c43f7089c469b414e3ad"
+  },
+  "orcid": "0000-0003-0705-9809",
+  "__v": 0,
+  "name": "Rahuman S Malik Sheriff",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6682c4637089c469b414e41f"
+  },
+  "orcid": "0000-0001-9224-9820",
+  "__v": 0,
+  "name": "András Hatos",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6682c7017089c469b414ed1a"
+  },
+  "orcid": "0000-0003-3659-4819",
+  "__v": 0,
+  "name": "Stanislav Mazurenko",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6683a4267089c469b417f3b5"
+  },
+  "orcid": "0000-0001-8035-341X",
+  "__v": 0,
+  "name": "Konstantinos A. Kyritsis",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6683a52c7089c469b417f6bf"
+  },
+  "orcid": "0000-0003-4067-7123",
+  "__v": 0,
+  "name": "Styliani Christina Fragkouli",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "668fc3487089c469b454be8b"
+  },
+  "orcid": "0000-0002-3664-9608",
+  "__v": 0,
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "email": "yongxinji2-c@my.cityu.edu.hk",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66921d947089c469b45e7e98"
+  },
+  "orcid": "0009-0003-5182-3533",
+  "__v": 0,
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "email": "786162019@qq.com",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66a270e87089c469b4b4b740"
+  },
+  "orcid": "0009-0002-1807-6671",
+  "__v": 0,
+  "email": "benjynstrauss@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c495857089c469b477b4ce"
+  },
+  "orcid": "0009-0007-2044-541X",
+  "__v": 0,
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "email": "mahta.mehdiabadi@gmail.cmo",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66d5a08e7089c469b4d96acf"
+  },
+  "orcid": "0000-0002-8069-2814",
+  "__v": 0,
+  "email": "shuo.zhou@sheffield.ac.uk",
+  "name": "Shuo Zhou",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e3632908d74f9cb330467"
+  },
+  "orcid": "0000-0003-1403-292X",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e3894908d74f9cb330ede"
+  },
+  "orcid": "0000-0001-9731-5153",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e39e1908d74f9cb331505"
+  },
+  "orcid": "0000-0002-0289-5480",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e3b6e908d74f9cb331be6"
+  },
+  "orcid": "0000-0003-3186-7478",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e3c50908d74f9cb331fd1"
+  },
+  "orcid": "0000-0002-9483-5898",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e60fa908d74f9cb33bb76"
+  },
+  "orcid": "0000-0002-3668-8711",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e68a5908d74f9cb33dfa4"
+  },
+  "orcid": "0000-0001-5072-542X",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e70a7908d74f9cb33fe7c"
+  },
+  "orcid": "0000-0001-9993-6017",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e76ea908d74f9cb3419bb"
+  },
+  "orcid": "0000-0002-5492-1871",
+  "__v": 0,
+  "email": "haunss@informatik.uni-freiburg.de",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e7819908d74f9cb341ef3"
+  },
+  "orcid": "0000-0001-8875-7304",
+  "__v": 0,
+  "email": "",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "670e7885908d74f9cb3420e6"
+  },
+  "orcid": "0000-0002-0604-3541",
+  "__v": 0,
+  "email": "jinxin.zhao@monash.edu",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6724ee06dd85bd59b34c490d"
+  },
+  "orcid": "0000-0002-4898-6679",
+  "__v": 0,
+  "name": "Chuan Lu",
+  "organisation": "undefined",
+  "roles": "user",
+  "email": "cul@aber.ac.uk",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6728d9dedd85bd59b361e855"
+  },
+  "orcid": "0000-0002-5995-5376",
+  "__v": 0,
+  "name": "Bastien Molcrette",
+  "organisation": "GigaScience",
+  "roles": "user",
+  "organizations": [
+    "academia",
+    "GigaScience",
+    "GigaByte"
+  ]
+},
+{
+  "_id": {
+    "$oid": "673370b4dd85bd59b39932f9"
+  },
+  "orcid": "0000-0002-7736-3307",
+  "__v": 0,
+  "email": "rkumar.biz@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67339149dd85bd59b399c87e"
+  },
+  "orcid": "0000-0003-1435-9535",
+  "__v": 0,
+  "email": "lukas.roth@usys.ethz.ch",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6735577cdd85bd59b3a35cbb"
+  },
+  "orcid": "0000-0001-9518-2027",
+  "__v": 0,
+  "email": "linshiqi2019m@big.ac.cn",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6735c76cdd85bd59b3a4f3fb"
+  },
+  "orcid": "0000-0003-3308-6878",
+  "__v": 0,
+  "name": "Yannan Fan",
+  "organisation": "GigaScience",
+  "roles": "admin",
+  "organizations": [
+    "academia",
+    "GigaScience",
+    "GigaByte"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6736ef89dd85bd59b3ab1779"
+  },
+  "orcid": "0000-0001-6110-5824",
+  "__v": 0,
+  "email": "fhausmann471@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6757114fdd85bd59b34e4f36"
+  },
+  "orcid": "0000-0003-1958-4002",
+  "__v": 0,
+  "name": "Omar Ibrahim",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "676005bbdd85bd59b37ec404"
+  },
+  "orcid": "0000-0001-6111-2020",
+  "__v": 0,
+  "email": "tianchilu4-c@my.cityu.edu.hk",
+  "name": "Tianchi Lu",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6760e76ddd85bd59b3841ff8"
+  },
+  "orcid": "0000-0001-8088-590X",
+  "__v": 0,
+  "email": "oalkhnbashi@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6765dbb8dd85bd59b399b946"
+  },
+  "orcid": "0000-0002-0511-8011",
+  "__v": 0,
+  "email": "Steffen.Lange@tu-dresden.de",
+  "name": "Steffen Lange",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "676a1780dd85bd59b3ab6ad7"
+  },
+  "orcid": "0009-0007-0003-2378",
+  "__v": 0,
+  "email": "shican@genomics.cn",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "676b62dddd85bd59b3b0dc32"
+  },
+  "orcid": "0000-0002-3396-7619",
+  "__v": 0,
+  "name": "xiaofei xu",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "677eef3ddd85bd59b303c812"
+  },
+  "orcid": "0000-0001-6665-5892",
+  "__v": 0,
+  "email": "yhdu@umich.edu",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6781052ddd85bd59b30c5b3f"
+  },
+  "orcid": "0000-0003-1691-8425",
+  "__v": 0,
+  "name": "Ivan Mičetić",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "678141b2dd85bd59b30d3f8b"
+  },
+  "orcid": "0000-0003-1796-6015",
+  "__v": 0,
+  "email": "tobias.bachmann@mailbox.org",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67866fb4dd85bd59b3218217"
+  },
+  "orcid": "0000-0003-3278-1190",
+  "__v": 0,
+  "email": "ki.zielins@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6786955bdd85bd59b3220ba6"
+  },
+  "orcid": "0000-0001-7862-6749",
+  "__v": 0,
+  "email": "Melanie.segado@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6789691ddd85bd59b32f01e8"
+  },
+  "orcid": "0000-0002-7302-0147",
+  "__v": 0,
+  "email": "adam.streck@gmail.com",
+  "name": "Adam Streck",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "678e5747edf7b65039c2911e"
+  },
+  "orcid": "0009-0000-8821-7746",
+  "__v": 0,
+  "email": "18parkky@gm.gist.ac.kr",
+  "name": "Gyumin Park",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "678e9180edf7b65039c365f5"
+  },
+  "orcid": "0000-0002-2701-3149",
+  "__v": 0,
+  "email": "cggm1@st-andrews.ac.uk",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "678fa631edf7b65039c6cf91"
+  },
+  "orcid": "0000-0002-2631-7271",
+  "__v": 0,
+  "name": "Mark Schuiveling",
+  "organisation": "undefined",
+  "roles": "user",
+  "email": "m.schuiveling@outlook.com",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6790cf55edf7b65039cac271"
+  },
+  "orcid": "0000-0003-2197-5563",
+  "__v": 0,
+  "email": "zhuzhongxu@him.cas.cn",
+  "name": "Zhongxu ZHU",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6790fabdedf7b65039cb4165"
+  },
+  "orcid": "0000-0002-0993-5625",
+  "__v": 0,
+  "name": "Pablo Carbonell",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67962494edf7b65039e3ae62"
+  },
+  "orcid": "0000-0003-0308-8549",
+  "__v": 0,
+  "email": "zxfeng.thu@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67a1e88dedf7b6503919a2da"
+  },
+  "orcid": "0009-0008-2595-6662",
+  "__v": 0,
+  "email": "anamiguelamorim1199@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67a24e62edf7b650391b303a"
+  },
+  "orcid": "0009-0004-0908-4148",
+  "__v": 0,
+  "email": "Lewis.Stuart@nottingham.ac.uk",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67a5eb0eedf7b6503929386c"
+  },
+  "orcid": "0000-0001-5185-0206",
+  "__v": 0,
+  "email": "giuseppe.gallitto@uk-essen.de",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67a74b80edf7b650392eec2d"
+  },
+  "orcid": "0009-0001-0470-2355",
+  "__v": 0,
+  "email": "liuyuwen@caas.cn",
+  "name": "Yuwen Liu",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67bf7c28edf7b650399238cf"
+  },
+  "orcid": "0009-0002-4227-6569",
+  "__v": 0,
+  "email": "maximilian.wess@ntnu.no",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67c20e2fedf7b650399e1122"
+  },
+  "orcid": "0000-0002-6802-9534",
+  "__v": 0,
+  "email": "stoutjd@nih.gov",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67c5dc98edf7b65039ab7e9d"
+  },
+  "orcid": "0000-0002-5858-9466",
+  "__v": 0,
+  "email": "nguyen92@myumanitoba.ca",
+  "name": "Hoang-Hai Nguyen",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67ca650aedf7b65039bf4676"
+  },
+  "orcid": "0000-0003-3916-9949",
+  "__v": 0,
+  "email": "vivek_mathema@hotmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67cb256bedf7b65039c1ba4e"
+  },
+  "orcid": "0000-0002-0677-4002",
+  "__v": 0,
+  "email": "sarkadiu@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67cf052eedf7b65039d00fb2"
+  },
+  "orcid": "0009-0008-1412-7797",
+  "__v": 0,
+  "email": "2201112026@pku.edu.cn",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67cfe836edf7b65039d3a8a0"
+  },
+  "orcid": "0009-0006-6618-7949",
+  "__v": 0,
+  "email": "igarachv@ugr.es",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user",
+  "organizations": [
+    "academia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67d4ce82edf7b65039e61113"
+  },
+  "orcid": "0000-0001-8175-045X",
+  "__v": 0,
+  "email": "MJoachimiak@lbl.gov",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67da3599edf7b65039fddc2c"
+  },
+  "orcid": "0000-0001-5630-6357",
+  "__v": 0,
+  "email": "yangmeng1@genomics.cn",
+  "name": "",
+  "organisation": "undefined",
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67e161b7edf7b650391d8aca"
+  },
+  "orcid": "0000-0003-1281-0433",
+  "__v": 0,
+  "email": "thomas.barba@chu-lyon.fr",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67e68da6edf7b6503931efec"
+  },
+  "orcid": "0009-0007-0063-095X",
+  "__v": 0,
+  "name": "blahblah",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67eb59d1edf7b6503942c56b"
+  },
+  "orcid": "0000-0001-6609-7587",
+  "__v": 0,
+  "name": "Slim Fourati",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67f47947edf7b650396a373d"
+  },
+  "orcid": "0009-0009-4963-4876",
+  "__v": 0,
+  "name": "Qing Lan",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67f66706edf7b6503972514d"
+  },
+  "orcid": "0000-0003-3528-1239",
+  "__v": 0,
+  "email": "murilobarbosa@alunos.utfpr.edu.br",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "67f67f70edf7b6503972b77b"
+  },
+  "orcid": "0000-0001-9277-502X",
+  "__v": 0,
+  "email": "kalyakulina.alena@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68032e3eede910531f6fcfc1"
+  },
+  "orcid": "0000-0002-3941-576X",
+  "__v": 0,
+  "email": "daijie@stu.njau.edu.cn",
+  "name": "Jie Dai",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6808b31cede910531f91e0a5"
+  },
+  "orcid": "0000-0001-5450-8131",
+  "__v": 0,
+  "email": "cszli@hotmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6808f0d0ede910531f9347c4"
+  },
+  "orcid": "0000-0002-5257-0027",
+  "__v": 0,
+  "name": "Anna Sandionigi",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "680a5602ede910531f9afe54"
+  },
+  "orcid": "0000-0002-9940-099X",
+  "__v": 0,
+  "email": "christian.gaser@uni-jena.de",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68128074ede910531fd0a06e"
+  },
+  "orcid": "0000-0003-3250-8143",
+  "__v": 0,
+  "email": "matthias.walle@ucalgary.ca",
+  "name": "Matthias Walle",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "681c7debb99adbaaf198921c"
+  },
+  "orcid": "0000-0001-9985-955X",
+  "__v": 0,
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user",
+  "email": "wolff.joachim@mh-hannover.de"
+},
+{
+  "_id": {
+    "$oid": "682b181db99adbaaf1056607"
+  },
+  "orcid": "0000-0001-7678-281X",
+  "__v": 0,
+  "email": "sofie.gielis@uantwerpen.be",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "682dcdcbb99adbaaf11444be"
+  },
+  "orcid": "0000-0002-4332-1379",
+  "__v": 0,
+  "name": "David Pflieger",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "682dce09b99adbaaf1144704"
+  },
+  "orcid": "0000-0002-9647-6470",
+  "__v": 0,
+  "name": "Audrey Hulot",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "682dd55bb99adbaaf1147f5d"
+  },
+  "orcid": "0000-0002-7753-9042",
+  "__v": 0,
+  "email": "mihail.anton@elixir-europe.org",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6836c0b8e5963d3a24940cba"
+  },
+  "orcid": "0000-0002-3212-3940",
+  "__v": 0,
+  "email": "lethanhhai@siu.edu.vn",
+  "name": "Thanh-Hai Le",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68418d2fe5963d3a24fd6bca"
+  },
+  "orcid": "0000-0003-4425-2608",
+  "__v": 0,
+  "email": "bundit.b_s18@vistec.ac.th",
+  "name": "Bundit Boonyarit",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "684d83d4e5963d3a24721b56"
+  },
+  "orcid": "0000-0002-7655-8612",
+  "__v": 0,
+  "name": "Wenlong Ma",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "684da513e5963d3a247340da"
+  },
+  "orcid": "0000-0002-3663-6743",
+  "__v": 0,
+  "email": "jmgomez@cebas.csic.es",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6852b52ae5963d3a24a8dce1"
+  },
+  "orcid": "0000-0003-1913-081X",
+  "__v": 0,
+  "email": "zty2009@hit.edu.cn",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6854578ae5963d3a24c04a98"
+  },
+  "orcid": "0000-0001-8731-3533",
+  "__v": 0,
+  "email": "qiangyang@ufl.edu",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6854f0d7e5963d3a24c87f7e"
+  },
+  "orcid": "0009-0001-2635-7767",
+  "__v": 0,
+  "email": "zxwang@sas.upenn.edu",
+  "name": "Zexuan Wang",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6855e021e5963d3a24d3c810"
+  },
+  "orcid": "0000-0003-2455-3614",
+  "__v": 0,
+  "email": "natashajayne@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6862f685e5963d3a24632500"
+  },
+  "orcid": "0000-0003-2787-3955",
+  "__v": 0,
+  "name": "Jacqueline D Campbell",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "686e5037e5963d3a24b1e51b"
+  },
+  "orcid": "0000-0002-5750-7801",
+  "__v": 0,
+  "email": "navid.shekarchizadeh@uni-leipzig.de",
+  "name": "Navid Shekarchizadeh",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68701eb2e5963d3a24c31fc6"
+  },
+  "orcid": "0000-0003-2084-3390",
+  "__v": 0,
+  "email": "xuqibo@ucla.edu",
+  "name": "Qibo Xu",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "687908e2e5963d3a2411916b"
+  },
+  "orcid": "0009-0006-1999-3251",
+  "__v": 0,
+  "email": "ian.tsang@niab.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "687e9536e5963d3a24445e7e"
+  },
+  "orcid": "0000-0002-6684-5300",
+  "__v": 0,
+  "email": "ngaggion@dc.uba.ar",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "687f1045e5963d3a244a8ce2"
+  },
+  "orcid": "0000-0003-1155-0959",
+  "__v": 0,
+  "email": "vincent.d.corbin@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6887c71de5963d3a24a0224f"
+  },
+  "orcid": "0009-0005-4166-8837",
+  "__v": 0,
+  "email": "hadasa.kaufman@mail.huji.ac.il",
+  "name": "Hadasa Kaufman",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "688a073ae5963d3a24b77f74"
+  },
+  "orcid": "0009-0004-3732-4858",
+  "__v": 0,
+  "email": "harikaurell@gmail.com",
+  "name": "Harika Ürel",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "688a46cfe5963d3a24baa79c"
+  },
+  "orcid": "0009-0006-2492-930X",
+  "__v": 0,
+  "email": "udit21213@iiitd.ac.in",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "688fc238e5963d3a24f1720b"
+  },
+  "orcid": "0009-0006-1600-1210",
+  "__v": 0,
+  "email": "hudie.luoluo@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "689c48b3e5963d3a246fe045"
+  },
+  "orcid": "0009-0006-9465-4524",
+  "__v": 0,
+  "email": "fcy_0613@163.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "689cc3cbe5963d3a247365f4"
+  },
+  "orcid": "0000-0002-5750-4897",
+  "__v": 0,
+  "email": "ngyuilun@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68b556f8e5963d3a245953e1"
+  },
+  "orcid": "0000-0002-8368-1555",
+  "__v": 0,
+  "name": "Hongfang Zhang",
+  "organisation": "GigaScience",
+  "organizations": [
+    "nothing",
+    "GigaScience",
+    "GigaByte"
+  ],
+  "roles": "admin"
+},
+{
+  "_id": {
+    "$oid": "68b5594fe5963d3a24597561"
+  },
+  "orcid": "0000-0002-9831-4539",
+  "__v": 0,
+  "name": "Dongni Ma",
+  "organisation": "GigaScience",
+  "organizations": [
+    "nothing",
+    "GigaScience",
+    "GigaByte"
+  ],
+  "roles": "admin"
+},
+{
+  "_id": {
+    "$oid": "68b65085e5963d3a24641df4"
+  },
+  "orcid": "0000-0002-7295-8176",
+  "__v": 0,
+  "name": "Hongling Zhou",
+  "organisation": "GigaScience",
+  "organizations": [
+    "nothing",
+    "GigaScience",
+    "GigaByte"
+  ],
+  "roles": "admin"
+},
+{
+  "_id": {
+    "$oid": "68beb961e5963d3a24a144b6"
+  },
+  "orcid": "0000-0001-8251-1960",
+  "__v": 0,
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user",
+  "email": "joao.saraiva@ufz.de"
+},
+{
+  "_id": {
+    "$oid": "68dc475ee5963d3a24998343"
+  },
+  "orcid": "0000-0002-1071-2744",
+  "__v": 0,
+  "name": "Pramod Shinde",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68edeaade5963d3a243afc20"
+  },
+  "orcid": "0000-0001-6489-1816",
+  "__v": 0,
+  "name": "Xinjiang Tan",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68f216dbe5963d3a2463ff6a"
+  },
+  "orcid": "0000-0002-8564-3157",
+  "__v": 0,
+  "email": "diane.duroux@ai.ethz.ch",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68f4581ae5963d3a2477ef09"
+  },
+  "orcid": "0009-0005-7786-1751",
+  "__v": 0,
+  "email": "anwbhat@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68f53dc3e5963d3a247f224f"
+  },
+  "orcid": "0000-0003-3298-3315",
+  "__v": 0,
+  "email": "pejman.shojaee@htw-dresden.de",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "68f610eae5963d3a24864387"
+  },
+  "orcid": "0009-0008-0559-9987",
+  "__v": 0,
+  "name": "Ramin Khalili",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6903b111e5963d3a243934ba"
+  },
+  "orcid": "0000-0002-3883-5535",
+  "__v": 0,
+  "email": "cigdem.sevimbayrak@mssm.edu",
+  "name": "Cigdem Sevim Bayrak",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "69046d38e5963d3a2442c42d"
+  },
+  "orcid": "0009-0004-5185-0643",
+  "__v": 0,
+  "email": "mahdi@hawaii.edu",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6908c273e5963d3a2475fb63"
+  },
+  "orcid": "0000-0002-7730-7436",
+  "__v": 0,
+  "name": "Maike Weber",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "69144aefe5963d3a24ee3868"
+  },
+  "orcid": "0000-0002-2714-7067",
+  "__v": 0,
+  "name": "Júlia Ortís Sunyer",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user",
+  "email": "ortis.julia@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "691caaace5963d3a2440244f"
+  },
+  "orcid": "0009-0007-6391-2567",
+  "__v": 0,
+  "name": "Bryn Matheson",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "69209e18e5963d3a24720e5b"
+  },
+  "orcid": "0000-0002-3946-1870",
+  "__v": 0,
+  "email": "neil.wright@ndph.ox.ac.uk",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6920aeffe5963d3a2472f6e9"
+  },
+  "orcid": "0000-0003-0834-5209",
+  "__v": 0,
+  "email": "supavit.k_s19@vistec.ac.th",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6927aa90e5963d3a24c21b47"
+  },
+  "orcid": "0000-0002-2675-261X",
+  "__v": 0,
+  "name": "Weixue Mu",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "692d3e71e5963d3a24fdf895"
+  },
+  "orcid": "0000-0003-0145-033X",
+  "__v": 0,
+  "name": "Vasileios Vasileiou",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user",
+  "email": "vasileioubill95@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "692e765de5963d3a240b6c9b"
+  },
+  "orcid": "0009-0002-9714-9460",
+  "__v": 0,
+  "email": "2050271008@email.szu.edu.cn",
+  "name": "Lulu Qin",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "6936f87ee5963d3a2464d821"
+  },
+  "orcid": "0009-0008-0906-5894",
+  "__v": 0,
+  "email": "mike.loomans@wur.nl",
+  "name": "Mike Loomans",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+},
+{
+  "_id": {
+    "$oid": "693749a5e5963d3a24678d9f"
+  },
+  "orcid": "0009-0007-5558-9245",
+  "__v": 0,
+  "email": "nazbuhn@gmail.com",
+  "name": "",
+  "organisation": "undefined",
+  "organizations": [
+    "nothing"
+  ],
+  "roles": "user"
+}]
