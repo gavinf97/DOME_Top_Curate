@@ -1,0 +1,57 @@
+{
+  "https://doi.org/10.1093/gigascience/giae119": {
+    "pmid": "39931027",
+    "pmcid": "PMC11811528",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1101/2025.07.21.665218": {
+    "pmid": "41134033",
+    "pmcid": "PMC12690466",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1093/gigascience/giaf039": {
+    "pmid": "40388307",
+    "pmcid": "PMC12087453",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1101/2024.10.30.621072": {
+    "pmid": "",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "-": {
+    "pmid": "",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "nan": {
+    "pmid": "41553357",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1016/j.amc.2024.128630": {
+    "pmid": "",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1101/2024.12.18.629275": {
+    "pmid": "",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "10.21203/rs.3.rs-5414158/v1": {
+    "pmid": "",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1101/2024.11.05.622168": {
+    "pmid": "",
+    "pmcid": "",
+    "action": "manual_update"
+  },
+  "https://doi.org/10.1093/gigascience/giaf141": {
+    "pmid": "41231584",
+    "pmcid": "PMC12824728",
+    "action": "manual_update"
+  }
+}
