@@ -165,16 +165,32 @@ class EvaluationApp:
         self.text_font = ("Helvetica", 13) 
         self.small_font = ("Helvetica", 10)
 
+        self.results_df = self.load_existing_results()
+
         # Data State
-        self.pmc_folders = sorted(glob.glob(os.path.join(DATA_DIR, "PMC*")))
+        all_folders = glob.glob(os.path.join(DATA_DIR, "PMC*"))
+        
+        # Prioritize done PMCs to maintain user progress sequence
+        done_pmcs = []
+        if not self.results_df.empty:
+             done_pmcs = self.results_df['PMCID'].unique().tolist()
+
+        def sort_key(folder_path):
+            pmc_id = os.path.basename(folder_path)
+            if pmc_id in done_pmcs:
+                # Group 0: Already done, maintain order of completion
+                return (0, done_pmcs.index(pmc_id))
+            else:
+                # Group 1: New items, sorted alphabetically
+                return (1, pmc_id)
+
+        self.pmc_folders = sorted(all_folders, key=sort_key)
         self.pmc_ids = [os.path.basename(f) for f in self.pmc_folders]
         
         if not self.pmc_ids:
             messagebox.showerror("Error", f"No PMC folders found in {DATA_DIR}")
             root.destroy()
             return
-
-        self.results_df = self.load_existing_results()
         
         # Navigation State
         self.current_pmc_index = 0
