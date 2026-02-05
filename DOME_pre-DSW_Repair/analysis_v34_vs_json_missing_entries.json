@@ -1,0 +1,1611 @@
+[
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b93"
+        },
+        "dataset": {
+            "availability": "Casp 11 website (https://predictioncenter.org/casp11/index.cgi)",
+            "provenance": "CASP",
+            "redundancy": "Not assessed. In principle de novo protein structure prediction experiments should involve protein with no similarity with those in public available databases",
+            "splits": "No",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "Performance achieved with methods based on automatic multiple sequence alignment calculation",
+            "confidence": "",
+            "measure": "Precision as a function of effective aligned sequences",
+            "method": "Independent dataset form CASP11",
+            "done": 3,
+            "skip": 2
+        },
+        "model": {
+            "availability": "http://bioinf.cs.ucl.ac.uk/MetaPSICOV",
+            "duration": "",
+            "interpretability": "Black box",
+            "output": "Classification prediction of residue contact.",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "Two stage neural network approach",
+            "config": "http://bioinf.cs.ucl.ac.uk/MetaPSICOV",
+            "encoding": "",
+            "features": "672 features",
+            "fitting": "Newly crystallized proteins should avoid overfitting ",
+            "meta": "Yes, combination of different alignments  tested on independent datasets",
+            "parameters": "",
+            "regularization": "",
+            "done": 5,
+            "skip": 3
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e1"
+        },
+        "publication": {
+            "pmid": "17374164",
+            "updated": "03/09/2022 10:14:51",
+            "authors": "Al-Shahib A, Breitling R, Gilbert DR",
+            "journal": "BMC Genomics",
+            "title": "Predicting protein function by machine learning on amino acid sequences--a critical evaluation.",
+            "doi": "10.1186/1471-2164-8-78",
+            "year": "2007",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "uuid": "147ddf2b-6b53-4335-b62f-87994d284310",
+        "reviewState": "undenfined",
+        "shortid": "nlj5x3dld8",
+        "update": 0,
+        "__v": 1,
+        "score": 14
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b1c"
+        },
+        "dataset": {
+            "availability": "Yes :  data to reproduce the results can be downloaded from GitHub (https://github.com/ggonzalezp/hyperfoods).  All data were extracted from publicly available databases.",
+            "provenance": "\"Data were extracted from publicly available databases: UniProt, STRING STITCH; COSMIC, NCBI,  DrugBase, DrugCentral,  FooDB, KEGG, MSigDB.   The dataset contains 2048 drugs (training dataset).   The dataset had been previously used also in https://doi.org/10.1038/s41598-019-45349-y.     The procedure in [ https://doi.org/10.1038/s41598-019-45349-y ] was used to obtain classification labels for the cancer task (positive (anti-cancer drug)/negative (non anti-cancer drug): N_pos = 209 /N_neg = 1839 drugs).   \n",
+            "redundancy": "",
+            "splits": "A 5-fold cross-validation was performed to assess model performance. In each split, 20% of the data is kept as the test set; from the remaining 80%, 10% is used as a validation set to perform early stopping. All splits were generated stratifying samples with respect to labels.  To balance the positive/negative classes (only 10.2% of drugs are anticancer), the contribution of each class was re-scaled to the loss function so that it is inversely proportional to class frequencies of each class during training.  ",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "Yes. (https://github.com/ggonzalezp/hyperfoods)",
+            "comparison": "A baseline input is used, in which all drug targets are set to zero. To motivate the use of network propagation, versions of the baseline and proposed methods without network propagation were also evaluated (for comparison to the method used in https://doi.org/10.1038/s41598-019-45349-y, which did not use network propagation). F1 score and AUPR were significantly higher with the adopted models.",
+            "confidence": "Confidence intervals and statistical significance are reported. Statistically significant higher performance measures were obtained by the used model, relative to the baseline method and to the method without network propagation used in https://doi.org/10.1038/s41598-019-45349-y.",
+            "measure": "Balanced accuracy, F1 score, AUPR. The last two are used as parameters which better capture the performance of a classifier in the case of a highly-imbalanced dataset.",
+            "method": "Cross-validation. The model was also tested on an independent dataset of 7793 food molecules, for their classification as anti-cancer or not anti-cancer, available for future experimental tests. The model outputs a high anticancer likelihood for a given food molecule if said molecule acts on the interactome through similar mechanisms of action as those of FDA-approved anticancer drugs. Among the anticancer-predicted molecules, e.g. genistein and pterostilbene show the most promise as cancer preventing agents, as indicated by substantial experimental evidence, gained from the literature.",
+            "done": 5,
+            "skip": 0
+        },
+        "model": {
+            "availability": "The code to reproduce the results can be downloaded from GitHub (https://github.com/ggonzalezp/hyperfoods)",
+            "duration": "Training time is expressed as milliseconds per sample per epoch, to facilitate the estimation of the total training time the proposed neural models would need for a different dataset.",
+            "interpretability": "Transparent : The attribution recall score for the best performing model is computed, to assess whether the model predicts drugs as anticancer preferentially based on the feature values in cancer-related genes, and found to be very high (85%). This means that the graph neural model classifies drugs as anticancer preferentially based on the value of the input features in cancer-related genes, which adds to the biological plausibility of the model. In addition, 6 use cases were invetigated. For all 6 drugs studied, over-represented pathways successfully recovered pathways described in the literature along with cancer-related\n pathways. This means that the representations learned capture the mechanisms of action of drugs.",
+            "output": "Regression is the output by neural networks, i.e. a probability distribution for anticancer/non-anticancer categories), which is taken in input by SVM for a binary classification output.",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "A  non-linear, multi-layer convolutional Graph Neural Network (GNN) was trained to encode drug features, which were then fed to a Multi-Layer Perceptron (MLP) to output a probability distribution.  The probability distributions were passed to a SVM for the binary classification of nodes. The training was end-to-end.",
+            "config": "Yes. Hyperparameter settings for every method are reported. For neural models, hyperparameter candidates can be found in Table 1, Characteristics of the neural network models architecture can be found in text.",
+            "encoding": "Initially, each drug (or food molecule) is represented by a graph G of human PPI (with 15135 nodes and 177848 edges), with one binary feature per node (1 for anti-cancer, 0 for non anti-cancer).     A vector representation of the graph G is computed using a Graph Encoder, i.e. a GNN, which learns the systemic effect of drugs (or food molecules) on the PPI network.    ",
+            "features": "Initial f0) = number of genes x number of drugs (15135x2048).  After the GNN step, each drug has an associated feature vector, so that the number of features is reduced to f < f(0). ",
+            "fitting": "As far as one can tell, over-fitting could not be excluded (p >> N).  Indeed, regularization was performed.",
+            "meta": "No",
+            "parameters": "",
+            "regularization": "Yes.   L2 regularization on weights of the neural network was performed.    Space search:  1.10^(\u22125), 1.10^(\u22124), 5.10^(\u22124).  ",
+            "done": 5,
+            "skip": 3
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e1"
+        },
+        "publication": {
+            "pmid": "19091017",
+            "updated": "03/25/2022 13:35:02",
+            "authors": "Tsai RT, Dai HJ, Huang CH, Hsu WL",
+            "journal": "BMC Bioinformatics",
+            "title": "Semi-automatic conversion of BioProp semantic annotation to PASBio annotation.",
+            "doi": "10.1186/1471-2105-9-S12-S18",
+            "year": "2008",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "uuid": "28fe7de1-ac05-4cf2-bfa8-d5ddd1ba32b8",
+        "reviewState": "undenfined",
+        "shortid": "v536tc3b5t",
+        "update": 0,
+        "__v": 1,
+        "score": 17
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b1d"
+        },
+        "dataset": {
+            "availability": "The materials, data, code and associated protocols are available to readers with application to the corresponding author and Waitemata privacy, security and governance group with a limited data sharing agreement.     ",
+            "provenance": "Upon ethics approval obtained locally at Waitemata District Health Board (New Zealand), hematology raw hospital data were downloaded from the Information Process Unit (IPU) of the hospitals.  Data from 43,761 patients were collected between 1 July 2019 and 8 June 2020 from two hospital's flow cytometry analyzers.     A total of 2168 of SARS-CoV-2 PCR tests could be matched to patients with Full Blood Counts (FBC) data.   9 patients with 102 FBCs were SARS-CoV-2 positive, 2159 patients with 15,243 FBCs were SARS-CoV-2 negative.",
+            "redundancy": "Since the 102 FBCs sample came from 9 positive patients only, independence seems doubtful. ",
+            "splits": "Models were trained, tested and then validated in an independent cohort. Due to the low number of COVID-19 PCR-positive cases, serial results for each positive case were used for descriptive statistics and in ML models, \"in the assumption that this would include the various stages of the disease and convalescence\".    A total of 102 (N_pos) instances (serial FBCs in 9 patients identified during New Zealand\u2019s first lockdown) and 204 (N_pos) control FBCs in unique patients were used for model training and testing.   For independent validation:  11 FBCs from 3 patients with COVID-19 were used for validation with 6770 controls.",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "The materials, data, code and associated protocols are available to readers with application to the corresponding author and Waitemata privacy, security and governance group with a limited data sharing agreement.",
+            "comparison": "A comparison is reported between the boosted decision tree model and the highest univariate predictor for COVID-19 (highly fluorescent lymphocytes count % [HFLC%]).",
+            "confidence": "AUROC from ML model was 0.80, from univariate predictor was 0.77, but the small difference was not statistically significant, according to 95% Confidence Intervals.",
+            "measure": "AUROC (in spite of the much higher numerosity of negative versus positive samples in the datasets).",
+            "method": "Validation (most likely 5-fold cross-validation, even if it not mentioned explicitly) on training set and validation on an independent set. Independent set: new data collected from 9 June 2020 to 24 August 2020 during New Zealand\u2019s second wave.",
+            "done": 5,
+            "skip": 0
+        },
+        "model": {
+            "availability": "The materials, data, code and associated protocols are available to readers with application to the corresponding author and Waitemata privacy, security and governance group with a limited data sharing agreement.",
+            "duration": "",
+            "interpretability": "Black box. No information about the optimized parameters were reported.",
+            "output": "Binary prediction of a positive or negative SARS-CoV-2 PCR result.",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "Boosted decision tree",
+            "config": "Authors state that BigML models will be shared without limitations.",
+            "encoding": "Global features.",
+            "features": "Apparently, 20 parameters from cytofluorometry and 4 parameters from standard biochemical laboratory data were used in input.    it is not mentioned whether some of the parameters related to primary diagnoses of other diseases, or related to age, ethnicity and sex were also used.   ",
+            "fitting": "According to the author's statement, the AUROC values of the training (0.98) and of the testing (0.99) sets were \"most likely over-fitting\" -- (AUROC of the independent validation set resulted 0.8).                                                                                ",
+            "meta": "NO",
+            "parameters": "not reported. Most likely, however, the number of parameters was as in the software package by default.",
+            "regularization": "Tools eventually applied to avoid overfitting are not mentioned.",
+            "done": 7,
+            "skip": 1
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e1"
+        },
+        "publication": {
+            "pmid": "18586734",
+            "updated": "04/18/2022 16:37:38",
+            "authors": "Klammer AA, Reynolds SM, Bilmes JA, MacCoss MJ, Noble WS",
+            "journal": "Bioinformatics",
+            "title": "Modeling peptide fragmentation with dynamic Bayesian networks for peptide identification.",
+            "doi": "10.1093/bioinformatics/btn189",
+            "year": "2008",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "uuid": "56505402-9ea8-41a0-9132-ea658a7eee7f",
+        "reviewState": "undenfined",
+        "shortid": "5867a1dxop",
+        "update": 0,
+        "__v": 1,
+        "score": 19
+    },
+    {
+        "_id": {
+            "$oid": "6638a2f7b30933003cc215b9"
+        },
+        "shortid": "toe45v1h7a",
+        "uuid": "71898e53-9df0-464d-9e78-bb95274221ec",
+        "created": {
+            "$date": "2024-05-06T09:29:27.218Z"
+        },
+        "updated": {
+            "$date": "2024-05-06T09:29:27.218Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "65e73fdb92c76639b8e309f3"
+        },
+        "publication": {
+            "pmid": "30109435",
+            "authors": "Radoslav Kriv\u00e1k, David Hoksza",
+            "journal": "Journal of cheminformatics",
+            "title": "P2Rank: machine learning based tool for rapid and accurate prediction of ligand binding sites from protein structure",
+            "doi": "10.1186/s13321-018-0285-8",
+            "year": "2018",
+            "tags": [],
+            "skip": 0
+        },
+        "dataset": {
+            "availability": "All the mentioned datasets are selected from previous studies and are publicly available.\nDatasets are both mentioned through referencing to other studies and accessible through the URL: https://github.com/rdk/p2rank-datasets",
+            "provenance": "Training:  CHEN11\u2014a dataset of 251 proteins harboring 476 ligands introduced in LBS prediction benchmarking study.\nOptimization and validation: JOINED\u2014consists of structures from several smaller datasets used in previous studies (B48/U48, B210, DT198, ASTEX) joined into one larger dataset. you can find the details below:\nB48/U48\u2014Datasets that contain a set of 48 proteins in a bound and unbound state.\nB210\u2014a benchmarking dataset of 210 proteins in bound state.\nDT198\u2014a dataset of 198 drug-target complexes.\nASTEX\u2014Astex Diverse set is a collection of 85 proteins that was introduced as a benchmarking dataset for molecular docking methods.",
+            "redundancy": "Datasets for training and validation purposes are selected arbitrarily.\nTesting dataset is not mentioned.\nOnly training set is mentioned to be non-redundant without explicit mention on the cutout identity percentage.",
+            "splits": "2 data splits were utilized:\nTraining: CHEN11 dataset composed of 251 data points.\nOptimization and validation: JOINED dataset composed of an overall  541 data points.\nAll the data points are positive examples of protein-ligand complexes.",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "availability": "The software and the source code is publicly available through the provided link to the GitHub repository of the software. It is a stand-alone executable software, they currently have a web server, but at the time of publication the web server was under development. URL: https://github.com/rdk/p2rank. Licence: MIT",
+            "duration": "It is mentioned that it requires under 1 s for prediction on one protein.",
+            "interpretability": "The model has 200 trees, each grown with no depth limit using 6 features, this makes it challenging to interpret due to the sheer number of trees and their depth. However, it is still possible to obtain feature importance scores.",
+            "output": "It is a regression model outputting numbers between 0 and 1.",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "The used algorithm is a Random Forest Regression model.\nThe model is not novel.",
+            "config": "URL: https://github.com/rdk/p2rank. Licence: MIT",
+            "encoding": "The model takes vectors of 35 numerical features as input.",
+            "features": "Every vector is composed of 35 numerical features.\nNo mention on feature selection.",
+            "fitting": "The clear number of parameters is not mentioned. No assessment on over/under fitting was mentioned.",
+            "meta": "The algorithm is not a meta-predictor.",
+            "parameters": "Beside the hyper-parameters of Random Forest, the algorithm uses other parameters and \"cut-of's\", thresholds\", \"protrusion radius\", are explicitly mentioned.\nIt is mentioned that only hyper-parameters are optimized on a separate dataset from training set.\nThe method of optimization is not mentioned.",
+            "regularization": "A validation set was used to optimize the parameters before training on the training set.",
+            "done": 8,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "",
+            "confidence": "",
+            "measure": "",
+            "method": "",
+            "done": 0,
+            "skip": 5
+        },
+        "reviewState": "undenfined",
+        "__v": 1,
+        "score": 16
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b44"
+        },
+        "dataset": {
+            "availability": "",
+            "provenance": "Breast magnetic resonance imaging (MRI) and clinical data from 311 HER2 overexpressing breast cancer patients. \n1)        Patients were classified into two groups based on HER2 expression level. Npos=279 patients with tumours that showed HER2 protein overexpression on immunohistochemistry (IHC 3+; IHC group). Nneg=32 patients with tumours that showed HER2 gene amplification detected by FISH in the absence of protein overexpression on IHC (IHC 2+ or 1+ to 2+; FISH group).\n2)        Npos=188 patients with pathologic complete response (pCR), which was defined as no residual invasive carcinoma in the breast or axillary lymph nodes (ypT0/isN0) at surgical resection. Nneg=123 patients that are non-pCR.\n",
+            "redundancy": "Inclusion criteria for this study were HER2 overexpressing breast cancer patients who underwent not reportedC and pretreatment state-of-the-art contrast-enhanced breast MRI. 70 were excluded because they did not have pretreatment breast MRI and 64 patients with outside images were excluded because of poor image quality.",
+            "splits": "For the prediction of pathological complete response, the data was split into training and test sets at a ratio of 4:1 (80% training and 20% test), with feature selection performed purely on the training set. Npos,train=150 patients with pCR. Npos,test=38 patients with pCR. Nneg,train=99 patients with non-pCR. Nneg,test=24 patients with non-pCR. \nDue to the low number of cases in the minority class, this was not feasible for the comparison between the IHC and FISH groups.",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "",
+            "confidence": "",
+            "measure": "Sensitivity, specificity, diagnostic accuracy",
+            "method": "5-fold cross validation",
+            "done": 2,
+            "skip": 3
+        },
+        "model": {
+            "availability": "",
+            "duration": "",
+            "interpretability": "Transparent. Assessing the presence of statistically significant differences, using Mann-Whitney U-test and Chi-squared test, across clinical and MRI features of 1) IHC vs FISH and 2) pCR vs non-pCR groups, before including them to the final model.",
+            "output": "1) Binary predictions of IHC (positive) or FISH (negative) samples.\n 2) Binary predictions of pCR (positive) or non-pCR (negative) samples.",
+            "done": 2,
+            "skip": 2
+        },
+        "optimization": {
+            "algorithm": "Coarse decision trees",
+            "config": "",
+            "encoding": "Following ROC and correlation analysis, Breast MRIs were assessed according to the American College of Radiology (ACR) Breast Imaging Reporting and Data System (BI-RADS) lexicon.\n\nManual, expert review on the MRI exams and performed 3D segmentations of the whole tumour in the first post-contrast non-subtracted sequence using ITK-Snot reportedP software.\n\nSusceptibility artefacts related to post-biopsy changes, when\npresent, were excluded from segmentation and only the largest\nlesion was segmented in multifocal tumours. \n\nEnhancement maps were calculated as the percentage increase in signal from the pre-contrast image to the first post-contrast image. Radiomics and statistical analysis were performed using MATLAB and publicly available CERR (Computational Environment for Radiological Research) software.\n\nFurthermore, data was reduced to a fixed bin number of 16 grey levels and only an interpixel distance of one was considered. CERR analysis resulted in 102 texture parameters sub-divided into six categories - 22 first order statistics, 26 statistics based on grey level cooccurrence matrices, 16 statistics based on run length matrices, 16 statistics based on size zone matrices, 17 statistics based on neighborhood grey level dependence matrices, and finally five statistics based on neighborhood grey tone difference matrices.\n\nFeatures were computed for each 2D directional matrix and averaged over 2D directions and slices, since data was not isotropic. As patients were scanned at different sites, Combat harmonisation was performed to remove the centre effect (local vs. foreign scans) while retaining the pathophysiologic information (either HER2 expression or pathologic response). The harmonisation employed Bayes estimates to account for both additive and multiplicative scanner effects.\n\nUnivariate analysis was performed to identify significant parameters. Continuous variables were described as mean, standard deviation (SD), and range. The two-tailed Mann-Whitney U test for two independent samples was used to determine significant differences between groups. Correlation analysis was then employed to remove redundant parameters from advancement to model development. If a highly positive (> 0.9) or highly negative (< -0.9) correlation was noted, the parameter with the lowest area under the receiver operating curve (AUROC) was removed.\n",
+            "features": "1)\tThe final model to predict HER2 intratumour expression levels (IHC vs. FISH) utilized three MRI features. Lesion type and multifocality (clinical features) and large zone emphasis (radiomic feature).\n2)\tThe model to predict pCR status included six MRI parameters. Lesion type and size (clinical parameters) and variance, first order entropy, 90th percentile and zone length variance (radiomic parameters).\n",
+            "fitting": "",
+            "meta": "No",
+            "parameters": "Coarse decision tree modelling was implemented in MATLAB, with the maximum number of splits set at four and utilizing Gini\u2019s diversity index as the splitting criterion.",
+            "regularization": "",
+            "done": 4,
+            "skip": 4
+        },
+        "user": {
+            "$oid": "6683a4267089c469b417f3b5"
+        },
+        "publication": {
+            "pmid": "30388153",
+            "updated": "03/06/2022 19:15:35",
+            "authors": "Caglar MU, Hockenberry AJ, Wilke CO",
+            "journal": "PLoS One",
+            "title": "Predicting bacterial growth conditions from mRNA and protein abundances.",
+            "doi": "10.1371/journal.pone.0206634",
+            "year": "2018",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "uuid": "706c0f3d-b856-473d-9864-c48e3733bceb",
+        "reviewState": "undenfined",
+        "shortid": "vecnt31t10",
+        "update": 0,
+        "__v": 1,
+        "score": 11
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b33"
+        },
+        "dataset": {
+            "availability": "GEO and TCGA data is available. The 86 clinical cases are not reported, neither is the code provided for the ML part of the paper",
+            "provenance": "Pubmed for relevant molecules (48 mol based on 38 articles), GEO (GSE53625 179 data points), TCGA (TCGA-ESCC 82 data points, 37 used for validation) and own clinical samples (86 samples)",
+            "redundancy": "No mention made. Separation appears to be done randomly for the GEO set.  All the rest was used as validation.  No mention about the overlap between the sets.",
+            "splits": "179 split into 134 training and 45 testing ESCC cases (randomly), 17 out of 48 moulecues were used as features for the classification.  ESCC cases with survival times more than 3 years were labelled 1 and the others were labelled 0, no information about the number in each set.",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "No comparison is made, as this is not the main point of this paper.",
+            "confidence": "",
+            "measure": "Only AUC was reported for the classifier, which is not the most suitable measure.",
+            "method": "They claim to have used crossvalidation but it is not explained. They use independent sets to test their findings and to relate the survival of patients to these findings.",
+            "done": 3,
+            "skip": 2
+        },
+        "model": {
+            "availability": "",
+            "duration": "",
+            "interpretability": "both, they used LR as well as ANN.",
+            "output": "Classification that is used to determine the most relevant set of features out of all 2^17-1 combinations.",
+            "done": 2,
+            "skip": 2
+        },
+        "optimization": {
+            "algorithm": "5 algorithms used, LR, SVM, ANN, RF and XGBoost ",
+            "config": "No",
+            "encoding": "mRnot reported data for 17 out 48 relevant molecules was used. The values expressed the difference in expression between the cancer and corresponding adjacent tissue.",
+            "features": "17 features corresponding to the most relevant molecules, which were obtained from literature and an additional network analysis based on String. They tested with each ML algorithm all 2^17-1 (131071) feature combinations to see which ones lead to the best predictions. Selection was done on training set (I assume)",
+            "fitting": "No information about parameters of the model and the model implementation.",
+            "meta": "No data is used from other predictors, but the 5 predictors are used together as an ensemble to identify the most predictive features, i.e. the molecules useful for separating cases with good prognosis from bas ones",
+            "parameters": "No details provided about the ML algorithm parameters",
+            "regularization": "not clear.  They claim to have uses cross-validation but it is not explained in detail.",
+            "done": 7,
+            "skip": 1
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879f2"
+        },
+        "publication": {
+            "pmid": "32878308",
+            "updated": "03/29/2022 09:10:15",
+            "authors": "Yilmaz A, Ugur Z, Bisgin H, Akyol S, Bahado-Singh R, Wilson G, Imam K, Maddens ME, Graham SF",
+            "journal": "Metabolites",
+            "title": "Targeted Metabolic Profiling of Urine Highlights a Potential Biomarker Panel for the Diagnosis of Alzheimer's Disease and Mild Cognitive Impairment: A Pilot Study.",
+            "doi": "10.3390/metabo10090357",
+            "year": "2020",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "uuid": "e2d3109d-c453-483d-8eb9-5fe17cc3bf50",
+        "reviewState": "undenfined",
+        "shortid": "tgx5ifo7mb",
+        "update": 0,
+        "__v": 1,
+        "score": 16
+    },
+    {
+        "_id": {
+            "$oid": "6677746e37ea6fa797a6c4a5"
+        },
+        "shortid": "0kf7cnsa5t",
+        "uuid": "341f3bec-3507-4c4b-8d19-c88ba8867202",
+        "created": {
+            "$date": "2024-06-23T01:03:42.235Z"
+        },
+        "updated": {
+            "$date": "2024-06-23T01:03:42.235Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "665a01aa7089c469b4646267"
+        },
+        "publication": {
+            "pmid": "34662334",
+            "authors": "Nicolas Arning, Samuel K. Sheppard, Sion Bayliss, David A. Clifton, and Daniel J. Wilson",
+            "journal": "PLOS Genetics",
+            "title": "Machine learning to predict the source of campylobacteriosis using whole genome data",
+            "doi": "10.1371/journal.pgen.1009436",
+            "year": "2021",
+            "tags": [],
+            "skip": 0
+        },
+        "dataset": {
+            "availability": "The data used is detailed in supplementary file 'S1 Table.'. Table contains all samples used in this study and their corresponding PubMLST accession IDs, sequence types, clonal complexes, source labels, predicted labels, generalist index, country of isolation, year of sampling, Campylobacter species and whether they have been used in either training or testing the machine learner.\nhttps://doi.org/10.1371/journal.pgen.1009436.s001\n\nTable is also available on Figshare: https://figshare.com/articles/dataset/Table_containing_all_samples_used_in_this_study_and_their_corresponding_PubMLST_accession_IDs_sequence_types_clonal_complexes_source_labels_predicted_labels_generalist_index_country_of_isolation_year_of_sampling_Campylobacter_species_and_wh/16827740\n\nThe data itself is hosted in the publicly available open access database: https://pubmlst.org/.",
+            "provenance": "Data source: database - PubMLST, databases for molecular typing\nand microbial genome diversity.\n\nData type: DNA - genomic data.\n\nTotal data points: 5,799 isolate genomes from C. jejuni and C. coli genomes. These were from various source experiments and host species. Genome source species distribution:\n-Chicken: 4147\n-Cattle: 716\n-Sheep: 584\n-Bird: 212\n-Environment: 140 \n\nNot a community recognised data set, this is a novel dataset composed of publicly available data from an open database for the ML models generation in this study.",
+            "redundancy": "Data sets were split at a ratio of:\n-Training: 75%\n-Testing: 25%\n\nThe test and training sets were kept independent for the model generation based on text description.",
+            "splits": "Of the total dataset 5,799 data points, these were divided into training (75% = 4,349 approx) and testing (25% = 1,450 approx) sets.\n\nThe data corresponded to 3x designated classess:\n-MLST sequencing type \n-MLST clonal complex \n-MLST core genome \n\nFor the distributions the authors used phylogeny-aware sorting, wherein all members of one sequencing type were sorted entirely into either training or testing sets. This is detailed in S1 Table.\n\nNo separate validation set used as the model is evaluated using five-fold cross-validation with the dataset detailed.  ",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "availability": "Somewhat available - the ML model code repository for the publication is named 'aiSource' and can be found from: https://github.com/narning1992/aiSource. The GitHub contains a downlaodable Python script. No container provided or other run methods clearly noted/linked. Further, it is unclear if all 14x models are available. It seems that only the XGboost model is in the repository.",
+            "duration": "Unclear for which model, but like the XGboost one, some information provided on execution time:\n\n-Possible to run on well provisioned desktop, no GPU explicitly needed. \n-The prediction detailed in the paper took 892 milliseconds on a Dell OptiPlex 7060 desktop using ten threads on an Intel Core i7-8700 CPU and 16 GB RAM.\n\nHowever, all 14x models no clear breakdown of training or standard predicition compute needs.",
+            "interpretability": "Poor interpretablity of the 14x models - largely black boxes. Exact dataset componenets used are available and clearly described in a machine actionable TSV. Data stored in an open database and accessible. However, for the GitHub linked it is not clear if there are all 14x ML model codes available on GitHub and linked from the paper, no docker containers either for easy redployment. The GitHub seems to only hold the code of the XGboost model generated in the stufy and none of the 13x others, this makes the models black boxes. Paraemeters for the models not described and number of models in the text make the paper very complex to hone in on the specific models or their exact info points. Some machine learning interpretability aspects well covered and considered but the information on model optimisations is poor overall. ",
+            "output": "Classification",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "14x total ML algorithms were used in the study, these are classified as:\n-Simple learners (6x)\n-Ensemble learners (3x)\n-Deep learners (5x)\n\nFull breakdown below:\n\nSimple learners\n1. K-nearest neighbour\n2. Ridge Regression\n3. SVM (Linear Kernel)\n4. SVM (RBF Kernel)\n5. Naive Bayesian\n6. Decision tree\n\nEnsemble learners\n7. Random forest\n8. Extra-randomised forest\n9. XGBoost\n\nDeep learners\n10. 1D-Convolutional NN\n11. Shallow Dense NN\n12. Deep Dense NN\n13. Recurrent NN\n14. LSTM NN\n\nThese are fully detailed in Fig 1. ",
+            "config": "Not clear, standard deposition of one of the models (XGboost) in GitHub relating to the paper but not clear if with corresponding hyperparameter configurations, optimization schedule, model files and optimization parameters. These are not well described in the text beyond some hyperparameters.",
+            "encoding": "Several encoding methods were used and varied depending on the data source (MLST vs. WGS). Missing values were handled differently for each data type. Nucleotides of the data were one-hot encoded and k-mers were used to capture sequence information.",
+            "features": "Number of features (f) used as input is 100,000 (ostensibly for all 14x models).\n\nFeature selection was perfomed:\n-Variance Threshold: reduced number of k-mers by discarding those present/absent in over 99% of samples.\n-Chi-Square Test: evaluated dependence of source labels on individual k-mers using the training data, and from this the top 100,000 k-mers with the highest scores were chosen.",
+            "fitting": "p is unknown in relation to f for fit evaluation. The study used early stopping and 5-fold cross-validation approaches to avoid overfitting.  ",
+            "meta": "No",
+            "parameters": "Number of parameters not clearly detailed in text for the 14x models generated.",
+            "regularization": "Early stopping: was used during the training. Training was run for 500 generations with early stopping after 50 generations.  No additional validation set clearly noted in text.",
+            "done": 7,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "No - not available from the text or from the GitHub.",
+            "comparison": "The performance of the machine learning models generated in the study for were compared to the most commonly used source attribution method. This method is called 'iSource' and relies on multi-locus sequence typing (MLST) data. \nThe comparison against this method helps establish a comparison baseline for assessing the improvement offered by the new machine learning models developed.\n\nThe study does perform comparisons between the 14x different machine learning models generated using various data types (MLST, cgMLST, WGS). This helps identify which models perform best with different levels of genomic information. Some of these models could be considered as simpler baselines (k-nearest neighbour) to the more complex deep learning models employed (Recurrent Neural Network.).",
+            "confidence": "Confidence intervals and statistical significance testing - not very prominent or clear in the main text. For the accuracy, the authors does report ' 81.3\u00b12%/84.6\u00b10% accuracy' confidence intervals for the cgMLST data used with the XGBoost classifier model. Other model accuracy confidence intervals are noted in Fig 1.",
+            "measure": "Several performance metrics were used to evaluate the machine learning models in the study:\n\n-Precision (positive predictive value) \n-Recall (sensitivity)\n-F1\n-Negative predictive value\n-Specificity \n-Speed\n-Misclassification Matrix\n\nHowever some key performance evaluation metrics were not noted such as area under the ROC Curve (AUC). Additionally, while in the text it states these perfomance measures were taken, it appears only a subset of these are actually clearly detailed and not for all models.\n\nMost of the performance measure metrics are detailed in Fig 2. and Fig 3.",
+            "method": "Evaluation methods used include:\n-Five-fold cross-validation\n-Comparison to existing methods\n-Performance of the models evaluated on different data types (core genome data vs whole genome sequence data)",
+            "done": 5,
+            "skip": 0
+        },
+        "reviewState": "undenfined",
+        "__v": 1,
+        "score": 20
+    },
+    {
+        "_id": {
+            "$oid": "680a4d01ea60466a7ca5ab48"
+        },
+        "shortid": "8mjjeoyqtq",
+        "uuid": "3c79c7ba-adce-4b2e-a00e-0b3df26014cf",
+        "created": {
+            "$date": "2025-04-24T14:38:57.774Z"
+        },
+        "updated": {
+            "$date": "2025-04-24T14:38:57.774Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "66c495857089c469b477b4ce"
+        },
+        "publication": {
+            "title": "SPOT-Disorder2: Improved Protein Intrinsic Disorder Prediction by Ensembled Deep Learning",
+            "authors": "Jack Hanson, Kuldip K. Paliwal, Thomas Litfin, Yaoqi Zhou ",
+            "journal": "Genomics, Proteomics & Bioinformatics",
+            "year": "2019",
+            "pmid": "",
+            "doi": "https://doi.org/10.1016/j.gpb.2019.01.004",
+            "done": 0,
+            "skip": 0,
+            "tags": [
+                "Critical Assessment of Protein Intrinsic Disorder",
+                "CAID"
+            ]
+        },
+        "dataset": {
+            "provenance": "They obtained 4229 non-redundant, high-resolution protein sequences from the Protein Data Bank (PDB) and Database of Protein Disorder (DisProt). These include 4157 X-ray crystallography structures (deposited to the PDB prior to August 05, 2003) and 72 fully-disordered proteins from DisProt v5.0. \nFor testing, they obtained three independent test datasets (SL250, Mobi9414, and DisProt228) . They removed long proteins (>700 residues) in these sets, and homologous proteins from the training set. ",
+            "splits": "The data is randomly split into a training set (Training) of 2700 chains, a validation set (Validation) of 300 chains, and a testing set (Test) of 1229 chains. Sequence similarity among these proteins is <25% according to BLASTClust . They remove all proteins of length >700 from all datasets. This reduces our training, validation, and test sets to 2615, 293, and 1185 proteins, respectively. For convenience, they will label this test set as Test1185.\nFor test set, they obtained three independent test datasets (SL250, Mobi9414, and DisProt228) . They removed long proteins (>700 residues) in these sets, and homologous proteins from the training set. ",
+            "redundancy": "Data is non redundant. The sequence similarity in the entire dataset is less than 25%. ",
+            "availability": "Details are provided in the paper. ",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "interpretability": "The model is a combination of several neural networks, so it could be treated as a black-box. ",
+            "output": "The model is regression. It outputs the probability of an amino acid being disordered, so it's a value between 0 and 1.",
+            "duration": "",
+            "availability": "SPOT-Disorder2 is available as a web server and as a standalone program at https://sparks-lab.org/server/spot-disorder2/.",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "The neural network topology employed in SPOT-Disorder2 consists of various models sequentially combining IncReSeNet, LSTM, and fully-connected (FC) topographical segments.",
+            "meta": "They utilized the predicted structural properties from SPOT-1D. The features from SPOT-1D consist of 11 secondary structure probabilities (both three- and eight-state predicted secondary structure elements), 4 sine and 4 cosine \u03b8, \u03c4, \u03c6, and \u03c8 backbone angles, 1 relative solvent-accessible surface area (ASA), 1 contact number (CN), and 2 half-sphere exposure (HSE) values based on the carbon-\u03b1 atoms.",
+            "config": "All the details are available in the supplementary materials. ",
+            "encoding": "",
+            "features": "SPOT-Disorder2 employed a similar set of features to SPOT-Disorder. Besides the same evolutionary content consisting of the position-specific substitution matrix (PSSM) profile from PSI-BLAST , SPOT-Disorder2 also includes the hidden Markov model (HMM) profile from HHblits [38]. The PSSM profile is generated by 3 iterations of PSI-BLAST against the UniRef90 sequence database (UniProt release 2018_03), and consists of 20 substitution values of each position for each AA residue type. The HMM profile consists of 30 values generated by using HHblits v3.0.3 with the UniProt sequence profile database from Oct 2017. These 30 values themselves consist of 20 AA substitution probabilities, 10 transition frequencies, and the number of effective homologous sequences of a given protein (Neff). In addition, they utilized the predicted structural properties from SPOT-1D. The features from SPOT-1D consist of 11 secondary structure probabilities (both three- and eight-state predicted secondary structure elements), 4 sine and 4 cosine \u03b8, \u03c4, \u03c6, and \u03c8 backbone angles, 1 relative solvent-accessible surface area (ASA), 1 contact number (CN), and 2 half-sphere exposure (HSE) values based on the carbon-\u03b1 atoms.\n\nIn total there are 73 features in the input. ",
+            "fitting": "",
+            "parameters": "A large corpus of models with varying hyperparameters are trained and their performance is analyzed on a validation set. These hyperparameters are swept through in a grid search and include the layout of the network, the number of nodes in each layer (one parameter each for LSTM, IncReSeNet, and FC layers), and the number of layers for each layer type. The five top-performing models with hyperparameters are chosen from this validation period and used in the final ensemble for SPOT-Disorder2.",
+            "regularization": "Dropout is used in different layers. ",
+            "done": 6,
+            "skip": 2
+        },
+        "evaluation": {
+            "method": "They obtained three independent test datasets (SL250, Mobi9414, and DisProt228) . They removed long proteins (>700 residues) in these sets, and homologous proteins from the training set. ",
+            "measure": "Sensitivity, precision, specifity, AUC ROC, AUC PR, and MCC are used, which are common metrics used in CAID.",
+            "comparison": "They compare SPOT-Disorder2 to several high-performing protein disorder predictors. These include the local versions of DISOPRED2 and DISOPRED3, MobiDB-lite, AUCpreD, s2D, GlobPlot, DisEMBLE, IUPred, AUCPred, JRONN, MFDp2, PONDR-VSL, SPOT-Disorder,  SPOT-Disorder-Single, ESpritz-D, ESpritz-N, ESpritz-X, and SPINE-D. They also used the webserver of NetSurfP-2.0.",
+            "confidence": "Statistical significance test is done and the results are statistically significant. ",
+            "availability": "Details are available in the supplementary materials. ",
+            "done": 5,
+            "skip": 0
+        },
+        "reviewState": "undenfined",
+        "tags": [],
+        "score": 18,
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "67e58011720e239b4827fba9"
+        },
+        "shortid": "4njliz31og",
+        "uuid": "37826956-f1d0-402e-843a-e8cc46c112c6",
+        "created": {
+            "$date": "2025-03-27T16:42:57.638Z"
+        },
+        "updated": {
+            "$date": "2025-03-27T16:42:57.638Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "66c495857089c469b477b4ce"
+        },
+        "publication": {
+            "title": "DisPredict3.0: Prediction of intrinsically disordered regions proteins using protein language model",
+            "authors": "Md Wasi Ul Kabir, Md Tamjidul Hoque",
+            "journal": "Applied Mathematics and Computation",
+            "year": "2024",
+            "pmid": "",
+            "doi": "https://doi.org/10.1016/j.amc.2024.128630",
+            "done": 0,
+            "skip": 0,
+            "tags": [
+                "Critical Assessment of Protein Intrinsic Disorder",
+                "CAID",
+                "CAID2"
+            ]
+        },
+        "dataset": {
+            "provenance": "DisPredict3.0 is trained and validated using the same dataset as the flDPnn method. However, test set differs from the flDPnn method, as they exclude a protein sequence (DP01026) that contains an unidentified amino acid (X). The authors of the flDPnn method curated the 745 proteins dataset from the DisProt 7.0 database. The ordered and disordered annotations are collected from the DisProt database. The regions not defined as disordered in the DisProt database are considered ordered. ",
+            "splits": "The training, test, and validation set contains 445, 175, and 100 proteins, respectively. In the training dataset, 77.1 % of the residues are ordered, while 22.9 % are disordered. Likewise, the test and validation datasets contain 73.1 % and 83.4 % ordered residues, respectively, and 26.9 % and 16.6 % disordered residues.",
+            "redundancy": "The training and test set share less than 25 % pairwise sequence identity to avoid overlap between the train and test set.",
+            "availability": "The DisPredict3.0 webserver is available at https://bmll.cs.uno.edu. The code and data related to the development of Dispredict3.0 can be found here https://github.com/wasicse/Dispredict3.0 .",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "interpretability": "LightGBM is not fully interpretable, but feature importance, SHAP, and tree visualization could help make it somewhat explainable",
+            "output": "The model outputs continuous values between 0 and 1, so it it a regression task. the values are then converted to binary classes using threshold.",
+            "duration": "the average execution time per protein for the DisPredict3.0 method was approximately 3.3 min (estimated from the plot) when run within a Docker container. the predominant portion of time is spent loading the sizable language model into memory.",
+            "availability": "The DisPredict3.0 webserver is available at https://bmll.cs.uno.edu. The code and data related to the development of Dispredict3.0 can be found here https://github.com/wasicse/Dispredict3.0 .",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "Light Gradient Boosting Machine (LightGBM) algorithm is used. LightGBM is a popular gradient-boosting framework based on tree-based learning algorithms. The algorithm develops trees leaf by leaf and selects the leaf that it thinks would result in the highest reduction in loss.",
+            "meta": "The model uses data features extracted by flDPnn as part of its input. The training data of initial predictors and meta-predictor are independent of test data for the meta-predictor",
+            "config": "",
+            "encoding": "DisPredict3.0 leverages the flDPnn method to gather residue-level, window-level, and protein-level sequence information. In addition to this, they extract evolutionary data using the Transformer-based protein language model known as Evolutionary Scale Modeling (ESM) from Facebook AI Research.  DisPredict3.0 extracts representations from all 34 layers of the ESM-1b (esm1b_t33_650M_UR50S) pre-trained model, representing each residue with a matrix of size (34 \u00d7 1281). They used  incremental PCA to transform the dimensions (34 \u00d7 1281) into a vector size of 5124, preserving 96.02 % of the original data variance.",
+            "features": "flDPnn ==> \t317 fetaures, ESM1-b after PCA ==> 5124  features, Total Features ==> 5441 features",
+            "fitting": "",
+            "parameters": "",
+            "regularization": "They employ the grid search technique to explore different parameter values, ultimately selecting the best parameter value of n_estimators = 1000. For the remaining parameters, they utilize the default values provided by scikit-learn. They also used 10-fold cross validation.",
+            "done": 5,
+            "skip": 3
+        },
+        "evaluation": {
+            "method": "The method used 10-fold cross validation for training and an independent test set from flDPnn excluding the protein DP01026.",
+            "measure": "The performance of DisPredict3.0 is evaluated using a suite of metrics that are commonly adopted for handling imbalanced datasets. These include the Area Under the Receiver Operating Characteristic curve (AUC), F1-score, Mathews Correlation Coefficient (MCC), and Kappa score. These metrics are established metrics used in CAID challenge.",
+            "comparison": "A comparison with 40 other methods is available in the paper and in the supplementary materials. ",
+            "confidence": "",
+            "availability": "https://github.com/wasicse/Dispredict3.0 ",
+            "done": 4,
+            "skip": 1
+        },
+        "reviewState": "undenfined",
+        "tags": [],
+        "score": 17,
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "692d713adef4ff8a776714be"
+        },
+        "shortid": "xpjtohmv78",
+        "uuid": "a624ec7b-3f0f-47fb-b6fc-8fd3fb4dbc79",
+        "created": {
+            "$date": "2025-12-01T10:43:06.383Z"
+        },
+        "updated": {
+            "$date": "2025-12-01T10:43:06.383Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "692d3e71e5963d3a24fdf895"
+        },
+        "publication": {
+            "title": "lncAPNet enables the deciphering of lncRNA\u2013mRNA connections in patient transcriptomic data",
+            "authors": "Vasileios Vasileiou, George I. Gavriilidis, Pedro Faria Zeni, Marek Mraz, Karatzas Evangelos, Antonis Giakountis, Georgios A. Pavlopoulos, Antonis Giannakakis, Fotis Psomopoulos\n",
+            "journal": "Oxford Bioinformatics",
+            "year": "-",
+            "pmid": "",
+            "doi": "-",
+            "done": 0,
+            "skip": 0,
+            "tags": [
+                "Long non-coding RNAs",
+                "Bioinformatics",
+                "Gene regulatory networks",
+                "Deep learning"
+            ]
+        },
+        "dataset": {
+            "provenance": "1st case study - CLL: Two RNA-seq count matrices and their corresponding clinical metadata:\n\n1. ICGC-CLL dataset comprised 257 samples [166 M-CLL, 91 U-CLL IGHV status].\n\n2. The BloodCancerMultiOmics2017 dataset comprised 111 samples [56 M-CLL, 55 U-CLL IGHV status].\n\n2nd case study - PRAD: RNAseq count matrix and their correspondining clinical metadata:\n\n TCGA-PRAD dataset comprised 495 samples [190 early-stage PRAD, 305 late-stage PRAD].",
+            "splits": "1st case study - CLL:\n\nThe ICGC dataset was first split into an 80\u201320% training\u2013validation partition.\nFrom the 80% training portion, a further 80\u201320% split was performed to generate the training and hyperparameter-tuning (grid-search) subsets.\n\nICGC samples for actual training [164].\nICGC samples for search griding [41].\nICGC samples for model validation [52].\nBloodCancerMultiOmics2017 dataset was used entirely as an independent test set (total samples [111]).\n\n2nd case study - PRAD:\n\nThe TCGA PRAD dataset was first split into an 80\u201320% training\u2013validation partition.\nFrom the 80% training portion, a further 80\u201320% split was performed to generate the training and hyperparameter-tuning (grid-search) subsets.\n\nTCGA PRAD samples for actual training [316].\nTCGA PRAD samples for search griding [80].\nTCGA PRAD samples for model validation [99].",
+            "redundancy": "Dataset partitioned randomly by using train_test_split command of sklearn.model_selection python package",
+            "availability": "1. ICGC ARGO (CLLE-ES): https://platform.icgc-argo.org/\n\n2. BloodCancerMultiOmics2017 R package: https://bioconductor.org/packages/release/data/experiment/html/BloodCancerMultiOmics2017.html\n\n3. TCGA PRAD: https://portal.gdc.cancer.gov/",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "interpretability": "Interpretable \u2013 in the article, the authors extensively explore the interpretation of the learned [model/representations/features]",
+            "output": "Classification",
+            "duration": "Estimated time for Griding ~1-2 days\nEstimated time for Training ~ 3-4 hours",
+            "availability": "github link: https://github.com/BiodataAnalysisGroup/lncAPNet",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "PASNet (Pathway-Associated Sparse Network) that utilize biological priors from pathway databases, enhancing both predictive performance and pathway-level interpretability",
+            "meta": "The algorithm used the activity matrices that extracted from the NetBID2 (part of the workflow), alongside with a table indicating whether the drivers participated in such of pathways from pathway enrichment with Gene Ontology (GO), Reactome, KEGG, and Wikipathway.",
+            "config": "The model configuration is available at the repository: https://github.com/BiodataAnalysisGroup/lncAPNet",
+            "encoding": "PASNet is applied to activity data, where each feature represents the activity level of a gene and is typically encoded as a continuous numerical value. To incorporate biological knowledge, genes are mapped to relevant pathways using established databases. This pathway information is then used in PASNet to impose sparse connections in the network, allowing the model to capture pathway-specific patterns in the data.",
+            "features": "1st model - case study CLL - Gene Ontology:\nTo reduce noise and focus on the most relevant features, we retained the common statistically significant drivers present in both the ICGC and BloodCancerMultiOmics2017 datasets, as these shared drivers are expected to participate in the pathways identified in the enrichment analysis. In total, 297 features were used for model training.\n\n2nd model - case study CLL - Reactome/KEGG/Wikipathway:\nTo reduce noise and focus on the most relevant features, we retained the common statistically significant drivers present in both the ICGC and BloodCancerMultiOmics2017 datasets, as these shared drivers are expected to participate in the pathways identified in the enrichment analysis. In total, 269 features were used for model training.\n\n3rd model - case study PRAD - Gene Ontology:\nTo reduce noise and focus on the most relevant features, we retained the statistically significant drivers present in TCGA-PRAD datasets, as these drivers are expected to participate in the pathways identified in the enrichment analysis. In total, 1756 features were used for model training.\n\n4th model - case study PRAD - Reactome/KEGG/Wikipathway:\nTo reduce noise and focus on the most relevant features, we retained the statistically significant drivers present in TCGA-PRAD datasets, as these drivers are expected to participate in the pathways identified in the enrichment analysis. In total, 1490 features were used for model training.",
+            "fitting": "-",
+            "parameters": "Learning Rate (LR) and L2 regularization (L2), through griding search\n\n1st model - case study CLL - Gene Ontology:\nOptimal learning rate (LR = 0.005) and L2 regularization (L2 = 0.0005)\n\n2nd model - case study CLL - Reactome/KEGG/Wikipathway:\nOptimal learning rate (LR = 0.007) and L2 regularization (L2 = 0.0005)\n\n3rd model - case study PRAD - Gene Ontology:\nOptimal learning rate (LR = 0.01) and L2 regularization (L2 = 0.0003)\n\n4th model - case study PRAD - Reactome/KEGG/Wikipathway:\nOptimal learning rate (LR = 0.007) and L2 regularization (L2 = 0.0003)",
+            "regularization": "-",
+            "done": 8,
+            "skip": 0
+        },
+        "evaluation": {
+            "method": "1st case study - CLL [both GO and rest of the databases]:\nCross-validation and an independent dataset\n\n2nd case study - PRAD [both GO and rest of the databases]:\nCross-validation",
+            "measure": "AUC and F1 score\n\n1st model - case study CLL - Gene Ontology:\nAUC = 0.96, F1score =  0.84\n\n2nd model - case study CLL - Reactome/KEGG/Wikipathway:\nAUC = 0.96, F1score = 0.84\n\n3rd model - case study PRAD - Gene Ontology:\nAUC = 0.84, F1score = 0.78\n\n4th model - case study PRAD - Reactome/KEGG/Wikipathway:\nAUC = 0.79, F1score = 0.76",
+            "comparison": "-",
+            "confidence": "No",
+            "availability": "No",
+            "done": 3,
+            "skip": 2
+        },
+        "reviewState": "undenfined",
+        "tags": [],
+        "score": 19,
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b94"
+        },
+        "dataset": {
+            "availability": "https://www.synapse.org/#!Synapse:syn3049712/wiki/74630",
+            "provenance": "In silico gene expression data from DREAM Challenge 4",
+            "redundancy": "Not assessed",
+            "splits": "Networks of different sets of genes for wt and perturbed networks",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "Comparison with state-of-the-art algorithms",
+            "confidence": "",
+            "measure": "AUROC and AUPR",
+            "method": "Evaluation of two datasets",
+            "done": 3,
+            "skip": 2
+        },
+        "model": {
+            "availability": "Matlab Code\n http://www.plosone.org/article/fetchSingleRepresentation.action?uri=info:doi/10.1371/journal.pone.0150611.s002",
+            "duration": "",
+            "interpretability": "Interpretable",
+            "output": "Network reconstruction",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "Learning Gaussian Bayesian networks with interventions",
+            "config": "No",
+            "encoding": "Global features",
+            "features": "Expression level of the genes under different conditions",
+            "fitting": "Not assessed",
+            "meta": "NO",
+            "parameters": "Increases with the size of the network. They scale with the number of possible edges",
+            "regularization": "No",
+            "done": 5,
+            "skip": 3
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e1"
+        },
+        "publication": {
+            "pmid": "18221567",
+            "updated": "03/24/2022 13:09:43",
+            "authors": "Zhao XM, Wang Y, Chen L, Aihara K",
+            "journal": "BMC Bioinformatics",
+            "title": "Gene function prediction using labeled and unlabeled data.",
+            "doi": "10.1186/1471-2105-9-57",
+            "year": "2008",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "uuid": "9052c56d-022c-45d9-8b82-58312399f0dc",
+        "reviewState": "undenfined",
+        "shortid": "ali2ohlvnk",
+        "update": 0,
+        "__v": 1,
+        "score": 15
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b48"
+        },
+        "dataset": {
+            "availability": "Yes: Supp data of referenced publication,  and GEO query",
+            "provenance": "Yes: used by previous papers. N_pos and N_neg are given.",
+            "redundancy": "Yes: random selection with redundancy removal in pos and neg sets (>70% sequence identity CD-HIT)",
+            "splits": "Yes: Size of N_pos and N_neg for training and test sets.",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "Yes: RNAm5Cfinder, iRNA-m5C, iRNAm5C-PseDNC, RNAm5CPred, PEA-m5C",
+            "confidence": "No. Justification based only on evaluation values difference (acc, sn, sp, pre, mcc, f1, AUROC)",
+            "measure": "accuracy, sensitivity, specificity, precision, Matthews correlation coefficient and F1-score, AUROC",
+            "method": "independent datasets",
+            "done": 4,
+            "skip": 1
+        },
+        "model": {
+            "availability": "No. Link to project (https://zhulab.ahu.edu.cn/m5CPred-SVM/) is broken",
+            "duration": "No",
+            "interpretability": "~Yes: Results for different feature selections",
+            "output": "Classification",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "Yes: SVM (compared to KNN, adaboost, random forest, decision tree, logistic regression and XGBoost)",
+            "config": "No",
+            "encoding": "Yes: sequence features (KNF/NC, KSNPF, PSNP, KSPSDP, PseDNC, CPD)",
+            "features": "Yes: 6 f. Wrapper method (sequence forward selection). ten-fold cross-validation on training dataset.",
+            "fitting": "No",
+            "meta": "No",
+            "parameters": "Yes: box constraint and kernel scale, optimised by a grid search",
+            "regularization": "Yes:  box constraint parameter",
+            "done": 5,
+            "skip": 3
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879f4"
+        },
+        "publication": {
+            "pmid": "30483279",
+            "updated": "03/28/2022 23:57:02",
+            "authors": "Zimmer D, Schneider K, Sommer F, Schroda M, M\u00fchlhaus T",
+            "journal": "Front Plant Sci",
+            "title": "Artificial Intelligence Understands Peptide Observability and Assists With Absolute Protein Quantification.",
+            "doi": "10.3389/fpls.2018.01559",
+            "year": "2018",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "uuid": "81c5e03c-ebb1-44ac-b252-0b787354659d",
+        "reviewState": "undenfined",
+        "shortid": "v1vwcbzzui",
+        "update": 0,
+        "__v": 1,
+        "score": 16
+    },
+    {
+        "_id": {
+            "$oid": "670e3d9261d57eb8bca695d2"
+        },
+        "shortid": "aqtrrhz75x",
+        "uuid": "a404e9b9-96f0-411a-b390-a893a6c59651",
+        "created": {
+            "$date": "2024-10-15T10:01:54.363Z"
+        },
+        "updated": {
+            "$date": "2024-10-15T10:01:54.363Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "6465d2d592c76639b8669c75"
+        },
+        "publication": {
+            "title": "Imputation method for single-cell RNA-seq data using neural topic model",
+            "authors": "Yueyang Qi, Shuangkai Han, Lin Tang, Lin Liu",
+            "journal": "GigaScience",
+            "year": "2023",
+            "pmid": "38000911",
+            "doi": "10.1093/gigascience/giad098",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "dataset": {
+            "provenance": "Human Pancreatic Islet data and Mouse Pancreatic Islet data;Human brain scRNA-seq data.All datasets have been used in other published journals and are available in public dataset repositories",
+            "splits": "No data splitting was done",
+            "redundancy": "Data does not overlap",
+            "availability": "Most of the data are in the NCBI Public Dataset.",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "interpretability": "Transparent.Neural Topic inherit the advantages of the topic model and is highly interpretable",
+            "output": "imputation",
+            "duration": "Transfer learning of models is linearly correlated with the number of genes",
+            "availability": "Links can be provided separately",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "Adam",
+            "meta": "No other data were used as inputs",
+            "config": "Yes.We will publish it on GitHub",
+            "encoding": "Normalization processing",
+            "features": "The expression of each gene in a single cell",
+            "fitting": "No",
+            "parameters": "Around 200",
+            "regularization": "No",
+            "done": 6,
+            "skip": 2
+        },
+        "evaluation": {
+            "method": " Independent dataset",
+            "measure": "ARI-Adjusted Rand Index, RI-Rand Index, NMI-Normalized Mutual Information, MI-Mutual Information and so on.",
+            "comparison": "Compare with other algorithms",
+            "confidence": "Not able to use indicator confidence intervals",
+            "availability": "Yes.We will publish it on GitHub",
+            "done": 5,
+            "skip": 0
+        },
+        "reviewState": "undenfined",
+        "__v": 1,
+        "score": 19
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b5a"
+        },
+        "dataset": {
+            "availability": "no.",
+            "provenance": "Data collection was conducted through samples aggregated from mango\nplants. Data is composed of images. \nThey perform 3 experimental scenarios: Dataset size (510, 46.500, 62.047).",
+            "redundancy": "",
+            "splits": "The overall original dataset has been divided into three subsets\nnamely (i) training; (ii) validation and (iii) testing with 60%, 20% and\n20% respectively.",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "",
+            "confidence": "",
+            "measure": "Accuracy.",
+            "method": "",
+            "done": 1,
+            "skip": 4
+        },
+        "model": {
+            "availability": "No",
+            "duration": "The cloud-based deployment of the CPU-only Tensorflow with Keras library has resulted\n in the computational time between 2 s to 2.99 s for the classification of the input image and provide a response to the mobile application.",
+            "interpretability": "Black box",
+            "output": "Classification.",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "The VGG-16 network architecture (Simonyan & Zisserman, 2014) has been updated to replace the last block containing the softmax classification with a fully-connected layer\n(FCL).",
+            "config": "No",
+            "encoding": "Data augmentation: blur (+ affine transform), contrast (+ affine transform), noise (+ affine transform). In total, for every image in the original dataset, additional 150 images have been generated through the presented augmentation process.",
+            "features": "The extracted features are flattened: input feature vector [7*7*512].",
+            "fitting": "They report overfitting and state that they will evaluate the performance of the network training against the overfitting in future research activity.",
+            "meta": "no.",
+            "parameters": "The weights of the VGG-16 network have been preserved from the pre-trained model. FCL layer network which consists of 2-layers. The first layer is activated by the ReLU function and consists of 256 nodes, followed by the second layer consisting of 16 nodes activated by softmax.",
+            "regularization": "no.",
+            "done": 7,
+            "skip": 1
+        },
+        "user": {
+            "$oid": "6312169df3794236aa987a03"
+        },
+        "publication": {
+            "pmid": "34229736",
+            "updated": "03/29/2022 22:22:24",
+            "authors": "Koo BS, Eun S, Shin K, Yoon H, Hong C, Kim DH, Hong S, Kim YG, Lee CK, Yoo B, Oh JS",
+            "journal": "Arthritis Res Ther",
+            "title": "Machine learning model for identifying important clinical features for predicting remission in patients with rheumatoid arthritis treated with biologics.",
+            "doi": "10.1186/s13075-021-02567-y",
+            "year": "2021",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "uuid": "fff9d12e-3bb2-4353-9447-8540487d7c84",
+        "reviewState": "undenfined",
+        "shortid": "h1b95pkq6c",
+        "update": 0,
+        "__v": 1,
+        "score": 14
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b5d"
+        },
+        "dataset": {
+            "availability": "Class I MHC binding affinity data in IEDB\nhttps://cbs.dtu.dk/services.NetMHCpan-3.0 (broken link)\n\nClass II MHC binding affinity data in IEDB\nhttps://cbs.dtu.dk/services.NetMHCIIpan-3.2 (broken link)\n\nBenchmark dataset (used for comparison with other methods)\nhttps://www.biorxiv.org/content/10.1101/154757v2  https://data.mendeley.com/datasets/jwhmrdx268/1\nThe authors obtained data in the class I MHC-peptide binding affinity benchmark from personal correspondence with Bhattacharya et al. and they have deposited this dataset in Mendeley Data. The accession number for this data is Mendeley Data:\nhttps://doi.org/10.17632/jwhmrdx268.1\n",
+            "provenance": "Regression data\n\nClass I MHC binding affinity data in IEDB\nBroken link\n\nClass II MHC binding affinity data in IEDB\nBroken link\n\nBenchmark dataset (used for comparison with other methods)\nCurated class I MHC benchmark dataset (https://www.biorxiv.org/content/10.1101/154757v2 https://data.mendeley.com/datasets/jwhmrdx268/1)  \nTraining 176,985\nTesting  26,888",
+            "redundancy": "Class I MHC binding affinity data in IEDB\nFor analyses on class I MHC-peptide binding, the IEDB-based dataset of Nielsen et al (2016) was used, in which 5 cross-validation folds were created to ensure no peptide shares a 9-mer sequence with any peptide in a different fold. \t\n\nClass II MHC binding affinity data in IEDB\nFor analyses on class II MHC-peptide binding, the IEDB-based dataset of Jensen et al (2018) was used, in which 5 cross-validation folds were created in the same way as in Nielsen et al (2016).\t\n\nBenchmark dataset (used for comparison with other methods)\nThe dataset of Bhattacharya et al.(2017) was used, who constructed a benchmark in which no peptide in the test set has identical length and greater than 80% sequence identity to any peptide in the training Set.",
+            "splits": "Class I MHC binding affinity data in IEDB\nOnly MHC alleles (114)  with more than 100 examples were included to ensure the quality of training.   1/8 of the training set was held out as a validation set.\t\n\nClass II MHC binding affinity data in IEDB\nOnly MHC alleles (55) with more than 100 examples were included to ensure the quality of training.   1/8 of the training set was held out as a validation set.\t\n\nBenchmark dataset (used for comparison with other methods)\n51 class I MHC alleles are covered in this dataset.   ",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "PUFFIN was compared to NetMHCpan, MHCflurry and MHCnuggets. Unlike those methods, PUFFIN provides uncertainty estimates for MHC-peptide affinity prediction. It is shown that PUFFIN\u2019s uncertainty estimates are able to reflect the predictive error on unseen examples.",
+            "confidence": "Confidence intervals are not reported. As mentioned in the text, there were no significant performance differences among the different tested methods.",
+            "measure": "auROC, F1 score, mean-squared-error (MSE), R2, Spearman, correlation, and Point-Biserial correlation. For auROC, F1 score, and Point-Biserial correlation, positive examples were defined as the ones with a binding affinity stronger than 500 nM.",
+            "method": "Cross-validation on training set and independent set",
+            "done": 4,
+            "skip": 1
+        },
+        "model": {
+            "availability": "https://github.com/gifford-lab/PUFFIN",
+            "duration": "",
+            "interpretability": "Black box",
+            "output": "Regression: The PUFFIN method takes as input a MHC-peptide pair and predicts a probabilistic distribution of peptide-MHC binding affinity. For Classification: positive examples were defined as the ones with a binding affinity stronger than 500 nM.",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "Ensemble of a deep Residual Convolutional Neural Networks.\t",
+            "config": "https://github.com/gifford-lab/PUFFIN",
+            "encoding": "Each MHC allele was represented by a pseudo-sequence consisting of 34 amino acid residues in contact with the peptide.  All peptides sequences were padded on the right end to the same length, 30 for class I and 40 for class II, using a place-holder amino acid.     For each MHC- peptide pair, the MHC feature vector and the peptide feature matrix formed a final input matrix of size 1400 x 30 for class I MHC and 1400 x 40 for class II MHC. The difference between the peptide length L and the expected length L (9 for class I MHC and 15 for class II MHC) was encoded using a sigmoid function.",
+            "features": "Number of initial features on the order of 1400 x 30",
+            "fitting": "Possible redundancy in the sequences",
+            "meta": "NO",
+            "parameters": "The model weights from the epoch with the lowest validation loss were selected.",
+            "regularization": "",
+            "done": 6,
+            "skip": 2
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e1"
+        },
+        "publication": {
+            "pmid": "19667082",
+            "updated": "04/06/2022 03:38:12",
+            "authors": "Wegrzyn JL, Lee JM, Liechty J, Neale DB",
+            "journal": "Bioinformatics",
+            "title": "PineSAP--sequence alignment and SNP identification pipeline.",
+            "doi": "10.1093/bioinformatics/btp477",
+            "year": "2009",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "uuid": "3f2e8acd-75f4-4e37-b345-0b43034fdfd4",
+        "reviewState": "undenfined",
+        "shortid": "zl2x79pdqc",
+        "update": 0,
+        "__v": 1,
+        "score": 17
+    },
+    {
+        "_id": {
+            "$oid": "6728dc731cd60917c59ba5a9"
+        },
+        "shortid": "cji1mirt7b",
+        "uuid": "1b825b5a-8d52-4f38-8391-d9850b3203f4",
+        "created": {
+            "$date": "2024-11-04T14:38:43.805Z"
+        },
+        "updated": {
+            "$date": "2025-01-31T10:12:12.140Z"
+        },
+        "public": true,
+        "user": {
+            "$oid": "651bcf4792c76639b8537ad6"
+        },
+        "publication": {
+            "title": "Unveiling Patterns in Spatial Transcriptomics Data: A Novel Approach Utilizing Graph Attention Autoencoder and Multi-Scale Deep Subspace Clustering Network",
+            "authors": "Zhou L; Peng X; Chen M; He X; Tian G; Yang J; Peng L",
+            "journal": "GigaScience",
+            "year": "2025",
+            "pmid": "39804726",
+            "doi": "https://doi.org/10.1093/gigascience/giae103",
+            "done": 0,
+            "skip": 0,
+            "created": ""
+        },
+        "dataset": {
+            "provenance": "publication",
+            "splits": "We did not split the data and used all datasets for model training and testing.\n",
+            "redundancy": "We did not split the data and used all datasets for model training and testing.",
+            "availability": "Yes.\nHuman dorsolateral pre-frontal cortex (DLPFC) can be downloaded from: http://research.libd.org/spatialLIBD/.\nThe 10x Geomics Visium dataset can be download from: https://www.10xgenomics.com/resources/datasets.\nThe mouse visual cortex STARmap data is accessible on https://www.dropbox.com/sh/f7ebheru1lbz91s/AADm6D54GSEFXB1feRy6OSASa/visual_1020/20180505_BY3_1kgenes?dl=0&subfolder_nav_tracking=1.",
+            "done": 4,
+            "skip": 0
+        },
+        "model": {
+            "interpretability": "black box",
+            "output": "No, our model is clustering.\n",
+            "duration": "The training time on one DLPFC section is about 1 hour.",
+            "availability": "https://github.com/plhhnu/STMSGAL",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "We introduce STMSGAL, a novel framework for analyzing ST data by incorporating graph attention autoencoder and multi-scale deep subspace clustering.",
+            "meta": "No",
+            "config": "No",
+            "encoding": "The collected datasets were be saved as '*.h5ad' format, also includes two-dimensional spatial coordinates for each spot/cell and H&E staining figures. We use SCANPY package to preprocess ST data.",
+            "features": "We choose the top 3000 highly variable genes as input.\n",
+            "fitting": "No",
+            "parameters": "\n:param rad_cutoff: When model=='Radius', the spot is connected to spots whose distance is less than rad_cutoff, default 150.\n:param cost_ssc:  The tradeoff parameter of the multi-scale self-expression loss, default 1.\n:param refinement: Whether to refine the human brain DLPFC, default, True.\n:param pre_resolution: The resolution value based on pre-clustering, default 0.2.\n:param n_top_genes: 'sc.pp.highly_variable_genes' parameter, default, 3000.\n\n:param lr: Learning rate, default,1e-4.\n:param n_epochs: The number of maximum epochs, default, 200.\n:param alpha: The weight of cell type-aware spatial neighbor network, default 0.5.\n\n",
+            "regularization": "weight decay",
+            "done": 5,
+            "skip": 3
+        },
+        "evaluation": {
+            "method": "We use different dataset to evaluate our method, which include measured by different sequencing platforms, different tissue.\n",
+            "measure": "For three datasets with labels (Human Breast Cancer (Block A Section 1), DLPFC, and mouse visual cortex STARmap), we employed adjusted rand index (ARI) to evaluate the performance of different spatial clustering algorithms. For two datasets whose spatial domain annotations are unavailable (Adult Mouse Brain (FFPE) and Human Breast Cancer (DCIS)), we evaluated the performance of spatial clustering algorithms based on three clustering metrics, that is, Davies-Bouldin (DB) score, Calinski-Harabasz (CH) score, and S_Dbw score.",
+            "comparison": "benchmarking method:  SCANPY, SEDR, CCST, DeepST, and GraphST.",
+            "confidence": "No",
+            "availability": "No",
+            "done": 3,
+            "skip": 2
+        },
+        "reviewState": "undenfined",
+        "__v": 1,
+        "score": 16
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b83"
+        },
+        "dataset": {
+            "availability": "no.",
+            "provenance": "Data from experiments.",
+            "redundancy": "",
+            "splits": "",
+            "done": 2,
+            "skip": 2
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "",
+            "confidence": "",
+            "measure": "",
+            "method": "",
+            "done": 0,
+            "skip": 5
+        },
+        "model": {
+            "availability": "No",
+            "duration": "",
+            "interpretability": "Black box",
+            "output": "Regression.",
+            "done": 2,
+            "skip": 2
+        },
+        "optimization": {
+            "algorithm": "T-distributed stochastic neighbor embedding (t-SNE).",
+            "config": "No",
+            "encoding": "",
+            "features": "",
+            "fitting": "",
+            "meta": "no.",
+            "parameters": "",
+            "regularization": "",
+            "done": 2,
+            "skip": 6
+        },
+        "user": {
+            "$oid": "6312169df3794236aa987a03"
+        },
+        "publication": {
+            "pmid": "34419924",
+            "updated": "03/28/2022 16:40:10",
+            "authors": "Hogan CA, Rajpurkar P, Sowrirajan H, Phillips NA, Le AT, Wu M, Garamani N, Sahoo MK, Wood ML, Huang C, Ng AY, Mak J, Cowan TM, Pinsky BA",
+            "journal": "EBioMedicine",
+            "title": "Nasopharyngeal metabolomics and machine learning approach for the diagnosis of influenza.",
+            "doi": "10.1016/j.ebiom.2021.103546",
+            "year": "2021",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "uuid": "b8fe2726-03eb-495c-bdf4-3ad68e43c7a5",
+        "reviewState": "undenfined",
+        "shortid": "hilwjyqhpx",
+        "update": 0,
+        "__v": 1,
+        "score": 6
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b80"
+        },
+        "dataset": {
+            "availability": "Yes, supplementary material.",
+            "provenance": "Positive data from lncRnot reporteddb v2, lncRnot reporteddisease. Negative data from Ensembl, Araport v11. Npos=436 lncRnot reported sequences. Nneg=? (total number of negative not known). Not previously used.",
+            "redundancy": "",
+            "splits": "Ten different indipendent 10-fold cross-validation performed. N_pos and N_neg for training and testing unknown. ",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "",
+            "comparison": "GreeNC method (transcript filtering, no machine-learning), CPAT",
+            "confidence": "No confidence reported",
+            "measure": "Sensitivity, Specificity, Accuracy, ROC-AUC",
+            "method": "Cross-validation. No indipendent datasets",
+            "done": 4,
+            "skip": 1
+        },
+        "model": {
+            "availability": "Code not available",
+            "duration": "",
+            "interpretability": "Transparent. Random forests provide feature importance",
+            "output": "Classification",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "Stochastic gradient boosting and random forests",
+            "config": "Configuration and hyper-parameter configuration available in the main text (Table 2)",
+            "encoding": "Eleven features for describing complete lncRnot reported sequence: mRnot reported length, ORF length, GC%, Fickett score, hexamer score, alignment identity in SwissProt database, length of alignment in SwissProt database, proportion of alignment length and mRnot reported length (alignment length:mRnot reported length), proportion of alignment length and ORF length (alignment length:ORF), presence of transposable element, and sequence percent divergence from transposable element.",
+            "features": "f=11. Feature selection by Recursive feature elimination",
+            "fitting": "",
+            "meta": "No",
+            "parameters": "",
+            "regularization": "No",
+            "done": 4,
+            "skip": 4
+        },
+        "user": {
+            "$oid": "6603042f92c76639b849e69f"
+        },
+        "publication": {
+            "pmid": "32681213",
+            "updated": "03/12/2022 19:15:18",
+            "authors": "Pulliam L, Liston M, Sun B, Narvid J",
+            "journal": "J Neurovirol",
+            "title": "Using neuronal extracellular vesicles and machine learning to predict cognitive deficits in HIV.",
+            "doi": "10.1007/s13365-020-00877-6",
+            "year": "2020",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "uuid": "29042d14-1d9f-444e-b046-b5ec3e731b15",
+        "reviewState": "undenfined",
+        "shortid": "g23kv6pr5v",
+        "update": 0,
+        "__v": 1,
+        "score": 14
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b8b"
+        },
+        "dataset": {
+            "availability": "Yes",
+            "provenance": "Yes",
+            "redundancy": "Yes",
+            "splits": "Yes",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "Yes",
+            "comparison": "Local baseline",
+            "confidence": "Yes",
+            "measure": "AUR",
+            "method": "Cross validation",
+            "done": 5,
+            "skip": 0
+        },
+        "model": {
+            "availability": "Yes",
+            "duration": "No",
+            "interpretability": "Black box but voting schema is applied",
+            "output": "Classification",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "SVM with RBF kernel",
+            "config": "Yes",
+            "encoding": "QSAR",
+            "features": "Yes, SMILES Chem structures with 250 fragments selected by MI",
+            "fitting": "",
+            "meta": "No",
+            "parameters": "No",
+            "regularization": "Yes - intrinsic to SVM",
+            "done": 5,
+            "skip": 3
+        },
+        "user": {
+            "$oid": "6312169df3794236aa987a36"
+        },
+        "publication": {
+            "pmid": "31148311",
+            "updated": "03/30/2022 16:46:29",
+            "authors": "Jing R, Li P, Ding Z, Lin X, Zhao R, Shi L, Yan H, Liao J, Zhuo C, Lu L, Fan Y",
+            "journal": "Hum Brain Mapp",
+            "title": "Machine learning identifies unaffected first-degree relatives with functional network patterns and cognitive impairment similar to those of schizophrenia patients.",
+            "doi": "10.1002/hbm.24678",
+            "year": "2019",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.445Z"
+        },
+        "uuid": "fcd15280-77b1-4526-b2fc-1a1b8987db42",
+        "reviewState": "undenfined",
+        "shortid": "nl91j0uju5",
+        "update": 0,
+        "__v": 1,
+        "score": 17
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305ba2"
+        },
+        "dataset": {
+            "availability": "No",
+            "provenance": "Yes",
+            "redundancy": "Yes",
+            "splits": "Control & clinical sets (300 healthy individuals and 43 patients)",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "No",
+            "confidence": "Yes",
+            "measure": "P-value of association",
+            "method": "",
+            "done": 2,
+            "skip": 3
+        },
+        "model": {
+            "availability": "Yes",
+            "duration": "Partially",
+            "interpretability": "Black box (~large decision-tree)",
+            "output": "Statistical analysis: association between features and disease",
+            "done": 4,
+            "skip": 0
+        },
+        "optimization": {
+            "algorithm": "Decision tree (C4.5)",
+            "config": "Yes",
+            "encoding": "",
+            "features": "",
+            "fitting": "",
+            "meta": "No",
+            "parameters": "",
+            "regularization": "",
+            "done": 2,
+            "skip": 6
+        },
+        "user": {
+            "$oid": "6312169df3794236aa987a36"
+        },
+        "publication": {
+            "pmid": "30794638",
+            "updated": "03/29/2022 09:39:03",
+            "authors": "Masino AJ, Harris MC, Forsyth D, Ostapenko S, Srinivasan L, Bonafide CP, Balamuth F, Schmatz M, Grundmeier RW",
+            "journal": "PLoS One",
+            "title": "Machine learning models for early sepsis recognition in the neonatal intensive care unit using readily available electronic health record data.",
+            "doi": "10.1371/journal.pone.0212665",
+            "year": "2019",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.446Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.446Z"
+        },
+        "uuid": "5574a8f7-41dd-4803-b335-00c1cbb28c34",
+        "reviewState": "undenfined",
+        "shortid": "hwprilha6h",
+        "update": 0,
+        "__v": 1,
+        "score": 11
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305ba9"
+        },
+        "dataset": {
+            "availability": "no",
+            "provenance": "RapidEye data were used as the high spatial resolution reflects the spatial heterogeneity of carbon  https://doi.org/10.1016/j.actaastro.2009.06.008",
+            "redundancy": "",
+            "splits": "104 in situ inventory plots",
+            "done": 3,
+            "skip": 1
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "We decided to apply SOM and kNN for the Corg models, as previous methods such as the derivation of Corg stocks from classified vegetation types or the derivation via quantiles in a classification and regression tree (CART) approach had only \n limited success.",
+            "confidence": "ML training metrics",
+            "measure": "bias and the root mean square error (RMSE)",
+            "method": "cross-validation",
+            "done": 4,
+            "skip": 1
+        },
+        "model": {
+            "availability": "No",
+            "duration": "",
+            "interpretability": "Black box",
+            "output": "classification",
+            "done": 2,
+            "skip": 2
+        },
+        "optimization": {
+            "algorithm": "SOMs and kNNs",
+            "config": "No",
+            "encoding": "no",
+            "features": "10",
+            "fitting": "",
+            "meta": "no",
+            "parameters": "k = 5 neighbors;  Euclidean distance d(x1,x2), of 2, and a distance weight w(i),p of 2",
+            "regularization": "",
+            "done": 5,
+            "skip": 3
+        },
+        "user": {
+            "$oid": "6683a52c7089c469b417f6bf"
+        },
+        "publication": {
+            "pmid": "25783485",
+            "updated": "02/28/2022 13:11:53",
+            "authors": "Engchuan W, Dhindsa K, Lionel AC, Scherer SW, Chan JH, Merico D",
+            "journal": "BMC Med Genomics",
+            "title": "Performance of case-control rare copy number variation annotation in classification of autism.",
+            "doi": "10.1186/1755-8794-8-S1-S7",
+            "year": "2015",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.446Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.446Z"
+        },
+        "uuid": "35b090fd-315b-4d28-93d7-b2c94ae39deb",
+        "reviewState": "undenfined",
+        "shortid": "0jrk3ke80f",
+        "update": 0,
+        "__v": 1,
+        "score": 14
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b3a"
+        },
+        "dataset": {
+            "availability": "Yes.  Dataset available in the SweetenersDB database http://sebfiorucci.free.fr/SweetenersDB/sweetenersDB.html  ",
+            "provenance": "Dataset:  316 sugar/sweeteners compounds of known sweetness collected by the authors from literature sources in the SweetenersDB database . Already used previously by the same authors (in a less-updated version).   ",
+            "redundancy": "The dataset  was split in training and validation sets using a Sphere Exclusion clustering algorithm.     The chemical space was mapped using t-SNE and PCA.",
+            "splits": "64 diverse compounds (20.3%) were selected for the validation set, leaving 252 compounds in the training set.     ",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "Several regression algorithms from the python package scikit-learn were evaluated: Random Forest, SVM, AdaBoost Tree, and k-Nearest Neighbors. Five-fold cross validation was performed with hyperparameter tuning using a grid search. The AdaBoost Tree model was selected as the best performing model, using 32 descriptors for the \u201cDragon\u201d model, and 51 descriptors for the \u201copen source\u201d model.",
+            "confidence": "Confidence intervals for coefficient of determination are shown in Fig. S2, but a statistical significance analysis among the different tested methods is not reported",
+            "measure": "Correlation Coefficient (R^2), cross-validated Correlation Coefficient (Q^2), coefficient of determination (|R^2-R0^2)/R^2), slope of regression line (k). The quality of each prediction is also assessed based on three metrics, namely the applicability, reliability, and decidability domains, typically used in the Quantitative Structure-Activity Relationships field.",
+            "method": "Cross-validation. Novel experiments: The virtual screening of a large database of natural compounds (4796) identified thousands of putative sweeteners, of which 3 were selected for in vitro functional assays of the human sweet taste receptor. Among them, arctiin, with a novel scaffold, was identified as a novel agonist of the T1R2/T1R3 sweet taste receptor.",
+            "done": 4,
+            "skip": 1
+        },
+        "model": {
+            "availability": "https://chemosimserver.unice.fr/predisweet/",
+            "duration": "",
+            "interpretability": "Black box",
+            "output": "Regression (sweetness score)",
+            "done": 3,
+            "skip": 1
+        },
+        "optimization": {
+            "algorithm": "The AdaBoost algorithm on a set of 80 Decision Trees was used, as implemented in the scikit learn package.             ",
+            "config": "A web server implementing the \u201copen-source\u201d model was developed and is freely available at http://chemosimserver.unice.fr/predisweet/. The 32 descriptors for the \u201cDragon\u201d model, and 51 descriptors for the \u201copen source\u201d model are also reported.",
+            "encoding": "Drugs were encoded as a set of molecular descriptors.    Molecular descriptors were computed using the Dragonpackage ('Dragon\" descriptors), or RDKit, Mordred, and ChemoPy packages (\u201copen-source\u201d descriptors). ",
+            "features": "\"For each molecule, 635 molecular descriptors for the Dragon dataset, and 506 features for the \u201copen-source\u201d dataset were used in the model.   For each of these two descriptors sets, the initial number of features had been reduced by removing near-constant features (two or less unique values), features with a standard deviation below 0.001, and features with a correlation greater than 0.95.       During cross-validation, selection of descriptors was done by keeping a given percentile of the highest ranked descriptors based on their Mutual Information with the endpoint. The optimal percentile of features was tuned as a parameter of the Grid Search.   \n\"",
+            "fitting": "Optimization of the number of features used by the model",
+            "meta": "NO",
+            "parameters": "Default defined in sklearn package",
+            "regularization": "Yes.  To avoid any model bias due to overfitting, the number of features used by the model is a hyperparameter that has been optimized. ",
+            "done": 7,
+            "skip": 1
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e1"
+        },
+        "publication": {
+            "pmid": "19154573",
+            "updated": "02/23/2022 23:30:01",
+            "authors": "Brown JB, Akutsu T",
+            "journal": "BMC Bioinformatics",
+            "title": "Identification of novel DNA repair proteins via primary sequence, secondary structure, and homology.",
+            "doi": "10.1186/1471-2105-10-25",
+            "year": "2009",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.443Z"
+        },
+        "uuid": "1fe140b6-a570-49cf-bccb-e58aa1719bec",
+        "reviewState": "undenfined",
+        "shortid": "2d714axh0n",
+        "update": 0,
+        "__v": 1,
+        "score": 18
+    },
+    {
+        "_id": {
+            "$oid": "63516fedb9c880af1f305b5c"
+        },
+        "dataset": {
+            "availability": "yes, https://www.nature.com/articles/s41467-019-12812-3#Sec24",
+            "provenance": "yes",
+            "redundancy": "no",
+            "splits": "no",
+            "done": 4,
+            "skip": 0
+        },
+        "evaluation": {
+            "availability": "No",
+            "comparison": "No",
+            "confidence": "No",
+            "measure": "No",
+            "method": "five-fold cross-validation",
+            "done": 1,
+            "skip": 4
+        },
+        "model": {
+            "availability": "No",
+            "duration": "No",
+            "interpretability": "Black box",
+            "output": "classification",
+            "done": 2,
+            "skip": 2
+        },
+        "optimization": {
+            "algorithm": "ensemble decision tree model",
+            "config": "No",
+            "encoding": "no",
+            "features": "no",
+            "fitting": "no",
+            "meta": "no",
+            "parameters": "no",
+            "regularization": "no",
+            "done": 7,
+            "skip": 1
+        },
+        "user": {
+            "$oid": "6312169df3794236aa9879e7"
+        },
+        "publication": {
+            "pmid": "16524483",
+            "updated": "01/28/2022 00:13:56",
+            "authors": "Wang H, Zheng H, Simpson D, Azuaje F",
+            "journal": "BMC Bioinformatics",
+            "title": "Machine learning approaches to supporting the identification of photoreceptor-enriched genes based on expression data.",
+            "doi": "10.1186/1471-2105-7-116",
+            "year": "2006",
+            "done": 0,
+            "skip": 0,
+            "tags": []
+        },
+        "public": true,
+        "created": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "updated": {
+            "$date": "2022-09-01T15:16:05.444Z"
+        },
+        "uuid": "66a94333-8cd1-499c-86ef-0497a4c4dabc",
+        "reviewState": "undenfined",
+        "shortid": "6i0xepuivt",
+        "update": 0,
+        "__v": 1,
+        "score": 14
+    }
+]
